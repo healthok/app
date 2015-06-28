@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.9/angular.min.js"></script>
+</head>
+<script>
+var myevents = angular.module('myeventsApp', []);
+
+myevents.controller("EventsController", function ($scope, $http) {
+    $http.get('http://www.truemd.in/api/medicine_suggestions/?id=aciloc&key=bafea2f5ba8792c85822f3bbe4a749').
+    success(function (data) {
+        $scope.events = data;
+        alert("hello");
+    });
+});
+</script>
+<body ng-app="myeventsApp">
+  <div ng-controller="EventsController" class="container">
+    <h1>Event</h1>
+    <hr/>
+    <div  >
+      <h4>staus= {{event.status}}</h4>
+      <p>rsponse= {{event.response}}</p>
+    </div>
+  </div>
+</body>
+</html>

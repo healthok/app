@@ -1,0 +1,154 @@
+<!DOCTYPE html> 
+<html>
+<head>
+	<title>Angular</title>
+ 	<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+	<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.16/angular.min.js"></script>
+	<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.3.16/angular-cookies.min.js"></script>   	
+</head>
+<body ng-app="myApp">
+	<div class="container">
+		<div ng-controller="SimpleController">
+ 		<div class="row">
+    	<div class="col-sm-8">
+    	<img src="Logo.png" width="200px"/></div>
+    	<div class="col-sm-4">	
+		<h4>{{mail}}
+		<button type="button" class="btn btn-danger btn-xs" ng-click="logout()"><span class="glyphicon glyphicon-log-out"></span> LOGOUT</button>
+		</h4>
+		</div>
+		</div>
+ 		<h1><span class="glyphicon glyphicon-search"></span>Search Medicine</h1>
+		<input type="text" class="form-control" ng-model="search" ng-change="sending()"/>
+		<ul class="list-group" ng-hide=st>
+    		<li class="list-group-item" ng-repeat="name in names" ng-click="filldata(name)">{{name}}</li>
+   		</ul>
+   		<br>
+   		<div class="well" ng-hide=st2>
+   			<h3>{{details.medicineName}}</h3>
+   			Company : {{details.company}}
+   			<br>
+   			Composition : {{details.composition}}
+   			<br>
+   			Dosage : {{details.dosage}}
+   			<br>
+   			Price : {{details.price}}
+   			<br>
+   			Quantity : {{details.quantity}}
+   			<br>
+   			<br>
+   			<button class="btn-primary" ng-click="addItem()">ADD TO CART</button>
+   		</div>
+   	<div>
+  		<h1><span class="glyphicon glyphicon-shopping-cart"></span>CART<span class="badge">{{invoice.items.length}}</span></h1>
+  		<table class="table">
+  			<tr><th>Description</th><th>Quantity</th><th>Cost</th><th>Total</th><th></th></tr>
+   			<tr ng:repeat="item in invoice.items">
+      			<td>{{item.medicineName}}</td>           
+      			<td><input type="text" ng:model="item.quantity" ng:required class="col-sm-2" ng-change="updateqty($index)"></td>
+      			<td>{{item.price}}</td>
+      			<td>{{item.quantity * item.price | currency:"&#8377;"}}</td>
+      			<td>
+        			<a href ng:click="removeItem($index)"><span class="glyphicon glyphicon-trash"></span></a>
+      			</td>
+    		</tr>
+    		<tr><td></td><td></td><th>Total:</th><th>{{total() | currency:"&#8377;"}}</th><td></td></tr>
+    		<tr><td></td><td></td><td></td><td><button class="btn-primary" ng-click="place()">Place Order</button></td><td></td></tr>
+  		</table>
+	</div>
+</div>
+<script>
+var myApp=angular.module("myApp",['ngCookies']);
+myApp.controller("SimpleController",function($scope,$http,$cookieStore)
+{ 
+	$scope.mail=$cookieStore.get("email");
+	if($scope.mail==null)
+	{
+		window.location="login.html";
+	};
+	$scope.logout=function()
+	{
+		$cookieStore.remove("email");
+		window.location="login.html";
+	};
+	$scope.invoice = 
+	{
+	  items: []
+	};
+	 $http.get('http://gshyam:8080/healthokapp/rest/buffer/cart/'+$scope.mail).success(function (data){
+		 
+	$scope.cart=data;	 
+	angular.forEach($scope.cart, function(item) 
+	        {
+		        $scope.invoice.items.push({
+		        id: item.medicineId,
+		        quantity: item.quantity, 
+		        medicineName: item.medicineName,
+		        price: item.price 
+		    	});
+	        })
+	});
+	
+	$scope.addItem = function()  
+	{
+        $scope.invoice.items.push({
+        id: $scope.details.medicineId,
+        quantity: 1, 
+        medicineName: $scope.details.medicineName,
+        price: $scope.details.price 
+    	});
+        $http.get('http://gshyam:8080/healthokapp/rest/buffer/'+$scope.mail+'/'+$scope.details.medicineId+'/'+'1').success(function (data){});
+    };
+    $scope.updateqty= function(index)
+    {   
+    	$http.get('http://gshyam:8080/healthokapp/rest/buffer/change/'+$scope.mail+'/'+$scope.invoice.items[index].id+'/'+$scope.invoice.items[index].qty).success(function (data){});
+    };
+    $scope.removeItem = function(index) 
+    {   
+        $http.get('http://gshyam:8080/healthokapp/rest/buffer/'+$scope.mail+'/'+$scope.invoice.items[index].id).success(function (data){});
+        $scope.invoice.items.splice(index, 1);
+    };
+    $scope.total = function() 
+    {
+        var total = 0;
+        angular.forEach($scope.invoice.items, function(item) 
+        {
+            total += item.quantity * item.price;
+        })
+        return total;
+    };
+	$scope.st=false;
+	$scope.st2=true;
+	$scope.sending=function()
+	{
+    	$scope.st=false;
+    	$scope.st2=true;
+    	$http.get('http://gshyam:8080/healthokapp/rest/medicine/max/'+$scope.search).success(function (data)
+    	{
+      		$scope.names=data;
+    	}); 
+	};
+	$scope.filldata=function(name)
+	{
+		$scope.search=name;
+		$scope.st=true;
+		$http.get('http://gshyam:8080/healthokapp/rest/medicine/'+$scope.search).success(function (data)
+	    {
+				      $scope.details=data;
+				      $scope.st2=false;
+		});
+	};
+	$scope.place=function()
+	{
+		var tota=$scope.total();
+		$cookieStore.put('total',tota);
+    	$cookieStore.put('vat',25);
+    	$cookieStore.put('delivery',50);
+		window.location="user.html";
+	}
+});
+</script>
+</div>
+</body>
+</html>

@@ -1,0 +1,65 @@
+<!doctype html>
+
+<html ng-app="formExample">
+	
+<head> 
+		
+<title>Hello AngularJS</title>
+<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>		
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.8/angular.min.js"></script>
+    	
+
+	
+</head>
+
+<body>
+<div class="container">
+<img src="Logo.png" width="200px"/>	
+</div>		
+<div class="container" ng-controller="ExampleController">
+<h1>SIGNUP</h1>
+First Name :
+<input class="form-control" type="text" ng-model="fname"/>
+Last Name :
+<input class="form-control" type="text" ng-model="lname"/>
+Email Id :
+<input class="form-control" type="text" ng-model="email"/>
+Password :
+<input class="form-control" type="password" ng-model="pass"/>
+Mobile No. :
+<input type="text" class="form-control" ng-model="phone"/>
+<br>
+<input type="submit" value="Signup" class="btn-primary form-control" ng-click="sending()"/> 
+<br>
+{{greeting}}
+</div>
+
+<script>
+angular.module('formExample', [])
+.controller('ExampleController', ['$scope','$http', function($scope,$http) {
+	
+    $scope.sending = function() {
+    	var fname=$scope.fname;
+    	var lname=$scope.lname;
+    	var email=$scope.email;
+    	var pass=$scope.pass;
+    	var phone=$scope.phone;
+    	$http.get('http://gshyam:8080/healthokapp/rest/signup/'+fname+'/'+lname+'/'+email+'/'+pass+'/'+phone).
+        success(function(data) {
+            $scope.greeting = data;
+            if($scope.greeting.status==1)
+            	{
+            	 window.location="login.html";
+            	}
+        });
+   
+    
+    };
+    }
+]);
+</script>
+	
+</body>
+
+</html>

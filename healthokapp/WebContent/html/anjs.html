@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html  ng-app="myApp" lang="en">
+<head>
+<meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+
+<script src= "http://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js"></script>
+<script src="personController.js">
+</script>
+<link href="index.css" rel="stylesheet">
+</head>
+<body>
+
+<div class="container" ng-controller="myCtrl">
+<div>
+{{data.status}}
+</div>
+<br>
+<button  ng-click="clickme()" class="btn btn-primary">click</button><br>
+
+</div>
+
+
+
+</body>
+</html>

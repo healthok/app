@@ -1,0 +1,80 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:layout_height="match_parent" android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    tools:context="com.example.zues.healthok.Search"
+    android:id="@+id/rlay">
+
+    <AutoCompleteTextView
+        android:hint="Search medicine"
+        android:layout_marginTop="70dp"
+        android:layout_width="fill_parent"
+        android:layout_height="40dp"
+        android:id="@+id/medname" />
+
+    <ListView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:textSize="35dp"
+        android:id="@+id/medicine"
+        android:layout_centerVertical="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        />
+
+    <Button
+
+        android:layout_marginTop="130dp"
+
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Search"
+        android:id="@+id/add"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:gravity="center"
+        android:clickable="true"
+        android:onClick="searchMedicine"
+        />
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="150dp"
+        android:text="My Cart"
+        android:id="@+id/mycart"
+        android:clickable="true"
+        android:onClick="seeCart"
+        android:layout_alignTop="@+id/add"
+        android:layout_toRightOf="@+id/add"
+        android:layout_toEndOf="@+id/add" />
+
+    <EditText
+        android:layout_width="80dp"
+        android:layout_height="wrap_content"
+        android:inputType="number"
+        android:hint="QUANTITY"
+        android:textSize="15dp"
+        android:layout_below="@id/medicine"
+        android:id="@+id/quantity"
+        android:visibility="invisible"/>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Add to cart"
+        android:id="@+id/cartbtn"
+        android:clickable="true"
+        android:onClick="addToCart"
+        android:visibility="invisible"
+        android:layout_below="@+id/quantity"/>
+
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/display"
+        />
+</RelativeLayout>

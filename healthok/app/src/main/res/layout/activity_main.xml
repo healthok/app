@@ -1,0 +1,75 @@
+
+<RelativeLayout
+xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:background="#ff34e8cb"
+    tools:context=".MainActivity" >
+    <ImageView
+        android:layout_marginTop="40dp"
+        android:layout_marginRight="30dp"
+        android:layout_width="fill_parent"
+        android:layout_height="120dp"
+        android:src="@drawable/logo"
+         />
+
+
+<ImageView
+    android:layout_width="90dp"
+    android:layout_height="90dp"
+    android:id="@+id/camera"
+    android:layout_marginLeft="30dp"
+    android:layout_marginTop="180dp"
+    android:clickable="true"
+    android:onClick="openCamera"
+    android:src="@drawable/camera"/>
+
+    <ImageView
+        android:layout_width="90dp"
+        android:layout_height="90dp"
+        android:clickable="true"
+        android:onClick="callHealthok"
+        android:id="@+id/call"
+        android:layout_marginLeft="140dp"
+        android:layout_marginTop="180dp"
+        android:src="@drawable/callus"/>
+
+    <ImageView
+
+        android:layout_width="90dp"
+        android:layout_height="90dp"
+        android:id="@+id/searchbtn"
+        android:layout_marginLeft="250dp"
+        android:layout_marginTop="180dp"
+        android:src="@drawable/search"/>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Login"
+        android:onClick="loginPage"
+        android:visibility="invisible"
+        android:id="@+id/button"
+        android:layout_alignParentTop="true"
+        android:layout_alignLeft="@+id/searchbtn"
+        android:layout_alignStart="@+id/searchbtn" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Logout"
+        android:id="@+id/logoutbtn"
+        android:visibility="invisible"
+        android:clickable="true"
+        android:onClick="logoutUser"
+        android:layout_alignParentTop="true"
+        android:layout_alignLeft="@+id/searchbtn"
+        android:layout_alignStart="@+id/searchbtn" />
+
+</RelativeLayout>

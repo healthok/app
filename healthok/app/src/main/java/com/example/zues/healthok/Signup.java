@@ -57,7 +57,7 @@ public class Signup extends Activity
         email=mail.getText().toString();
         password=pass.getText().toString();
         phone=pnum.getText().toString();
-        url="http://192.168.0.13:8080/healthokapp/rest/signup/"+firstname+"/"+lastname+"/"+email+"/"+password+"/"+phone;
+        url="http://localhost:8080/healthokapp/rest/signup/"+firstname+"/"+lastname+"/"+email+"/"+password+"/"+phone;
                 new Register().execute();
     }
 

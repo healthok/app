@@ -141,7 +141,7 @@ public class Search extends Activity {
 
         medicine=(EditText)findViewById(R.id.medname);
         String medicinename=medicine.getText().toString();
-        url = "http://192.168.0.13:8080/healthokapp/rest/medicine/"+medicinename;
+        url = "http://localhost:8080/healthokapp/rest/medicine/"+medicinename;
         new GetContacts().execute();
 
     }

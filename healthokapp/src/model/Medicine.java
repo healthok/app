@@ -16,6 +16,15 @@ public class Medicine {
 		this.quantity = quantity;
 		this.price = price;
 	}
+	
+	public Medicine(int medicineId, String medicineName, int quantity,
+			float price) {
+		super();
+		this.medicineId = medicineId;
+		this.medicineName = medicineName;
+		this.quantity = quantity;
+		this.price = price;
+	}
 	public int getQuantity() {
 		return quantity;
 	}

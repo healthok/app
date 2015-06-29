@@ -38,7 +38,7 @@ public class Cart extends ActionBarActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_cart);
-        url="http://192.168.0.13:8080/healthokapp/rest/create/deobrat811@gmail.com";
+        url="http://localhost:8080/healthokapp/rest/create/deobrat811@gmail.com";
 
         new GetContacts().execute();
         Toast.makeText(Cart.this, jsonStr, Toast.LENGTH_LONG).show();

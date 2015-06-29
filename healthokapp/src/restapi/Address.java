@@ -1,5 +1,6 @@
 package restapi;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -34,16 +35,18 @@ public class Address {
 	 return res;
 		
 	}
+	//to return all address to display
 	
 	@Path("/{username}")
 	@GET
 	@Produces (MediaType.APPLICATION_JSON)
-	public static Map<Long, model.Address> getAddress(@PathParam("username") String user){
-		Map<Long, model.Address> add=new HashMap<>();
+	public static ArrayList<model.Address> getAddress(@PathParam("username") String user){
+		ArrayList<model.Address> add=new ArrayList<model.Address>();
 		add=biz.Address.getAddress(user);
 		
 		return add;
 	}
+	//to delete the address
 	 @Path("/delete/{addressid}")
 	 @GET
 	 @Produces (MediaType.APPLICATION_JSON)
@@ -51,7 +54,7 @@ public class Address {
 		biz.Address.deleteAddress(addid);
 	}
 	
-	 
+	 //to update already exiting address
 	 @Path("/update/{housenumber}/{street}/{city}/{state}/{country}/{pincode}/{addressid}/{fullname}/{phone}")
 		@GET
 		@Produces (MediaType.APPLICATION_JSON)

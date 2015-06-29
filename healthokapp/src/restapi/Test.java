@@ -50,4 +50,14 @@ public class Test {
 		
 		
 	}
+	@Path("/address/{username}")
+	@GET
+	@Produces (MediaType.APPLICATION_JSON)
+	public static ArrayList<model.Address> getAddress(@PathParam("username") String user){
+		ArrayList<model.Address> address =new ArrayList<model.Address>();
+		address=dal.Test.responseAddress(user);
+		return address;
+		
+		
+	}
 }

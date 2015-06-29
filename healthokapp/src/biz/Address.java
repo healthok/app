@@ -1,5 +1,6 @@
 package biz;
 
+import java.util.ArrayList;
 import java.util.Map;
 
 public class Address {
@@ -9,7 +10,7 @@ public class Address {
 		return dal.Address.insertAddress(object,username);
 	}
 	
-	public static Map<Long, model.Address> getAddress(String username){
+	public static ArrayList<model.Address> getAddress(String username){
 		
 		return dal.Address.responseAddress(username);
 	}

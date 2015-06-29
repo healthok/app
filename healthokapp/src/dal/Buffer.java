@@ -89,7 +89,7 @@ public class Buffer {
 		return result;
 		
 	}
-	
+	//only for move to ordered items
 	public static ArrayList<model.Buffer> getAllbufferItem(String username){
 		int userid=0;
 		ArrayList<model.Buffer> buffers=new ArrayList<>(); 
@@ -172,11 +172,11 @@ public class Buffer {
 		return result;
 		
 	}
-	
-	public static Map<Long, model.Medicine> getCartItems(String username){
+	//to display cart items
+	public static ArrayList<model.Medicine> getCartItems(String username){
 		int userid=dal.GetUserId.userid(username);
-		Map<Long, model.Medicine> medicine =new HashMap<>();
-		long i=1;
+		ArrayList<model.Medicine> medicine =new ArrayList<model.Medicine>();
+		
 		con5=(Connection) Crudoperation.createConnection();
 		String str1="SELECT * FROM healthok.buffer,healthok.medicine where healthok.buffer.userid=? and healthok.buffer.medicineid=healthok.medicine.medicineid";
 
@@ -188,8 +188,9 @@ public class Buffer {
 			String name=rs5.getString("medicineName");
 			int quant=rs5.getInt("buffer.quantity");
 			float price=rs5.getFloat("price");
-			medicine.put(i, new model.Medicine(name, quant, price));
-			i++;
+			int id=rs5.getInt("medicineid");
+			medicine.add( new model.Medicine(id,name, quant, price));
+			
 		}
 		}
 		catch(SQLException se)

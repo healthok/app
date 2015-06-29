@@ -1,5 +1,6 @@
 package restapi;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -50,11 +51,12 @@ public class Buffer {
 		
 	}
 	
+	//to get all cart items
 	@Path("/cart/{username}")
 	@GET
 	@Produces (MediaType.APPLICATION_JSON)
-	public static Map<Long, model.Medicine> getOrderedItems(@PathParam("username") String user){
-		Map<Long, model.Medicine> medicine=new HashMap<>();
+	public static ArrayList<model.Medicine> getOrderedItems(@PathParam("username") String user){
+		ArrayList<model.Medicine> medicine =new ArrayList<model.Medicine>();
 		medicine=biz.Buffer.getCartItems(user);
 		return medicine;
 		

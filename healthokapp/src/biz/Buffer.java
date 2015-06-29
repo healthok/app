@@ -1,5 +1,6 @@
 package biz;
 
+import java.util.ArrayList;
 import java.util.Map;
 
 public class Buffer {
@@ -8,11 +9,12 @@ public class Buffer {
 		
 		return dal.Buffer.addtoBuffer(username, medicineid, quantity);
 	}
+	
 	public static int sendDeleteBuffer(String username,int medicineid){
 		return dal.Buffer.deleteBuffer(username, medicineid);
 	}
 	
-	public static Map<Long, model.Medicine> getCartItems(String username){
+	public static ArrayList<model.Medicine> getCartItems(String username){
 		
 		return dal.Buffer.getCartItems(username);
 	}

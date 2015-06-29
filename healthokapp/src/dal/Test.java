@@ -17,6 +17,10 @@ public class Test {
 	static PreparedStatement ps5=null;
 	static ResultSet rs5=null;
 	
+	static Connection con3;
+	static PreparedStatement ps3=null;
+	static ResultSet rs3=null;
+	
 	public static ArrayList<model.Medicine> testCartItems(String username){
 		int userid=dal.GetUserId.userid(username);
 		ArrayList<model.Medicine> medicine =new ArrayList<model.Medicine>();
@@ -43,5 +47,36 @@ public class Test {
 		return medicine;
 	}
 	
-	
+	public static ArrayList<model.Address> responseAddress(String username){
+		int userid=dal.GetUserId.userid(username);
+		ArrayList<model.Address> addresses=new ArrayList<model.Address>();
+		
+		con3=(Connection) Crudoperation.createConnection();
+		String str3="select * from address where UserId=?";
+		try{
+			ps3=(PreparedStatement) con3.prepareStatement(str3); 
+			ps3.setInt(1,userid);
+			rs3=ps3.executeQuery();
+			while(rs3.next()){
+	        int user=rs3.getInt("UserId");
+	        String house=rs3.getString("housenumber");
+	        String street=rs3.getString("Street");
+	       String city=rs3.getString("City");
+	        String state=rs3.getString("State");
+	        String country=rs3.getString("Country");
+	       String pin=rs3.getString("pincode");
+	        int addid=rs3.getInt("AddressId");
+	        String fname=rs3.getString("fullname");
+	        String phone=rs3.getString("phone");
+	        addresses.add(new model.Address(house, street, city, state, country, pin, addid, user, fname, phone));
+	        
+			}
+			
+		}
+		catch(SQLException se)
+		   {
+			   
+		   }
+		return addresses; 
+	}
 }

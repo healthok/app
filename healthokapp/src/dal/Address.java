@@ -2,6 +2,7 @@ package dal;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -63,10 +64,10 @@ public class Address {
 		return result; 
 	}
 	
-	public static Map<Long, model.Address> responseAddress(String username){
+	public static ArrayList<model.Address> responseAddress(String username){
 		model.Address address1=new model.Address();
 		int userid=dal.GetUserId.userid(username);
-		Map<Long, model.Address> addresses=new HashMap<>();
+		ArrayList<model.Address> addresses=new ArrayList<model.Address>();
 		long i=1;
 		con3=(Connection) Crudoperation.createConnection();
 		String str3="select * from address where UserId=?";
@@ -85,8 +86,8 @@ public class Address {
 	        int addid=rs3.getInt("AddressId");
 	        String fname=rs3.getString("fullname");
 	        String phone=rs3.getString("phone");
-	        addresses.put(i,new model.Address(house, street, city, state, country, pin, addid, user, fname, phone));
-	        i++;
+	        addresses.add(new model.Address(house, street, city, state, country, pin, addid, user, fname, phone));
+	        
 			}
 			
 		}
@@ -96,7 +97,7 @@ public class Address {
 		   }
 		return addresses; 
 	}
-	
+	//get address by id in string format to insert in order table
 	public static String getAddressById(int addressid){
 		con2=(Connection) Crudoperation.createConnection();
 		String str="select * from Address where AddressId=?";
@@ -131,6 +132,7 @@ public class Address {
 			
 		}
 	}
+	
 	 public static void updateAddress(model.Address address,int addressid){
 		 con4=(Connection) Crudoperation.createConnection();
 		 String str4="update address set housenumber=?,street=?,City=?,State=?,Country=?,pincode=?,fullname=?,phone=? where Addressid=?";

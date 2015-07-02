@@ -5,29 +5,15 @@
 <title>Insert title here</title>
 </head>
 <body>
-<form action="/healthokapp/Signup">
+<form action="http://localhost:8080/healthokapp/rest/create/5" method="POST" enctype="multipart/form-data">
 <h1>Sign up</h1>
-First Name:
+<h1>upload file</h1>
 <br>
-<input type="text" name="fname">
-<br>
-Last Name:
-<br>
-<input type="text" name="lname">
-<br>
-Email-Id:
-<br>
-<input type="text" name="email">
-<br>
-Password:
-<br>
-<input type="text" name="password">
-<br>
-Phone:
-<br>
-<input type="text" name="phone">
-<br>
-<input type="submit" value="SIGN UP">
+<input type="file" name="file">
+<br><br>
+<input type ="text" name="name">
+<br><br>
+<input type="submit" value="UPLOAD FILE">
 </form>
 </body>
 </html>

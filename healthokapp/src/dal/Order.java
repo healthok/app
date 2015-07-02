@@ -56,10 +56,10 @@ public class Order {
 	
 	public static model.Order getOrderDetail(int orderid){
 		model.Order order=new model.Order();
-		con=(Connection) Crudoperation.createConnection();
+		con2=(Connection) Crudoperation.createConnection();
 		String str1="select * from healthok.order where orderId=?";
 		try{
-			ps2=(PreparedStatement) con.prepareStatement(str1);
+			ps2=(PreparedStatement) con2.prepareStatement(str1);
 			ps2.setInt(1,orderid);
 			rs2=(ResultSet) ps2.executeQuery();
 			if(rs2.next()){

@@ -1,15 +1,21 @@
 package servlet;
 import java.sql.*;
+
+import javax.naming.InitialContext;
+
+import com.owlike.genson.Context;
 public class Crudoperation 
 {
 private static Connection Con=null; 
 ResultSet rs=null;
 PreparedStatement ps=null;
+
 public static Connection createConnection()
 {
 	try
 	{
 		Class.forName("com.mysql.jdbc.Driver");
+		
 		Con=DriverManager.getConnection("jdbc:mysql://localhost:3306/healthok","root","root");
 	}
 	catch(SQLException se)

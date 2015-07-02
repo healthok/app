@@ -9,7 +9,9 @@ public class Crudoperation
 private static Connection Con=null; 
 ResultSet rs=null;
 PreparedStatement ps=null;
+Context env = (Context)new InitialContext().lookup("java:comp/env");
 
+String connection = (String)env.lookup("connection");
 public static Connection createConnection()
 {
 	try

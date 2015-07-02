@@ -86,7 +86,7 @@ angular.module('formExample', ['ngCookies'])
 		}
 		$scope.deliver=function(index)
 		{
-			$http.get('http://gshyam:8080/healthokapp/rest/order/'+$scope.mail+'/'+$scope.total+'/'+$scope.vat+'/'+$scope.delivery+'/'+$scope.addresses[index+1].addressId).
+			$http.get('http://gshyam:8080/healthokapp/rest/order/'+$scope.mail+'/'+$scope.total+'/'+$scope.vat+'/'+$scope.delivery+'/'+$scope.addresses[index].addressId).
 	        success(function(datas) 
 	        {
 	        	$scope.order=datas;
@@ -100,7 +100,7 @@ angular.module('formExample', ['ngCookies'])
 		}
 		$scope.deletion =function(index)
 		{
-			$http.get('http://gshyam:8080/healthokapp/rest/address/delete/'+$scope.addresses[index+1].addressId).success(function(datas){
+			$http.get('http://gshyam:8080/healthokapp/rest/address/delete/'+$scope.addresses[index].addressId).success(function(datas){
 				$http.get('http://gshyam:8080/healthokapp/rest/address/'+$scope.mail).
 		        success(function(data) {
 		            $scope.addresses = data;
@@ -126,15 +126,15 @@ angular.module('formExample', ['ngCookies'])
 		$scope.edit=function(index)
 		{
 		   $scope.st=false;
-           $scope.house=$scope.addresses[index+1].housenumber;
-           $scope.street=$scope.addresses[index+1].street;
-           $scope.city=$scope.addresses[index+1].city;
-           $scope.state=$scope.addresses[index+1].state;
-           $scope.country=$scope.addresses[index+1].country;
-           $scope.pincode=$scope.addresses[index+1].pincode;
-		   $scope.fname=$scope.addresses[index+1].fullname;
-		   $scope.phone=$scope.addresses[index+1].phone;
-		   $scope.id=$scope.addresses[index+1].addressId;
+           $scope.house=$scope.addresses[index].housenumber;
+           $scope.street=$scope.addresses[index].street;
+           $scope.city=$scope.addresses[index].city;
+           $scope.state=$scope.addresses[index].state;
+           $scope.country=$scope.addresses[index].country;
+           $scope.pincode=$scope.addresses[index].pincode;
+		   $scope.fname=$scope.addresses[index].fullname;
+		   $scope.phone=$scope.addresses[index].phone;
+		   $scope.id=$scope.addresses[index].addressId;
 		};
 		 $scope.sending = function() {
 			  

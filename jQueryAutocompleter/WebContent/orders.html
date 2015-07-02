@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+
+</head>
+<body>
+
+<h1>MY ORDERS</h1>
+<br>
+<ul class="list-group col-sm-7">
+<li class="list-group-item" ng-repeat="x in personalorders">
+<table class="table">
+<tr class="info"><th>OrderId</th><th>Amount</th><th>VAT</th><th>Shipping Cost</th><th>Order Date</th><th></th></tr>
+<tr>
+<td>{{x.orderId}}</td><td>{{x.amount}}</td><td>{{x.tax}}</td><td>{{x.shippingcost}}</td><td>{{x.date}}</td><td><button class="btn btn-primary" ng-click="showme($index)">Show Details</button></td>
+</tr>
+</table>
+</li>
+</ul>
+<div class="well col-sm-5" ng-show=stt>
+<h3>Details for orderid {{orderid}}</h3>
+<table class="table">
+<tr class="success"><th>Medicine Name</th><th>Quantity</th><th>Price</th><th>Total</th></tr>
+<tr ng-repeat="item in items">
+<td>{{item.medicineName}}</td>
+	  <td>{{item.quantity}}</td>
+	  <td>{{item.price}}</td>
+	  <td>{{item.quantity*item.price}}</td>
+</tr>
+</table>
+</div>
+</body>
+</html>

@@ -16,7 +16,7 @@
     <url-pattern>/rest/*</url-pattern>
   </servlet-mapping>
   <env-entry> 
-    <env-entry-name>connection</env-entry-name> 
+    <env-entry-name>connectionName</env-entry-name> 
     <env-entry-type>java.lang.String</env-entry-type> 
     <env-entry-value>"jdbc:mysql://localhost:3306/healthok","root","root"</env-entry-value> 
 </env-entry>

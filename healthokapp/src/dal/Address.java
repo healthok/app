@@ -48,7 +48,9 @@ public class Address {
 			   ps.setInt(7, address.getUserId());
 			   ps.setString(8, address.getFullname());
 			   ps.setString(9, address.getPhone());
+			   
 			   int rw=ps.executeUpdate();
+			  
 			   if(rw>0)
 			   {
 				  result=dal.GetAddressId.getRecentAddressid(username);

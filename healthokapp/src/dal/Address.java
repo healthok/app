@@ -35,7 +35,8 @@ public class Address {
 		int result=0;
 		int userid=dal.GetUserId.userid(username);
 		address.setUserId(userid);
-		con=(Connection) Crudoperation.createConnection();
+		Crudoperation crudoperation = new Crudoperation();
+		con=(Connection) crudoperation.createConnection();
 		String str1="insert into address(housenumber,street,city,state,country,pincode,userid,fullname,phone) values (?,?,?,?,?,?,?,?,?)";
 		try{
 			 ps=(PreparedStatement) con.prepareStatement(str1);
@@ -69,7 +70,8 @@ public class Address {
 		int userid=dal.GetUserId.userid(username);
 		ArrayList<model.Address> addresses=new ArrayList<model.Address>();
 		long i=1;
-		con3=(Connection) Crudoperation.createConnection();
+		Crudoperation crudoperation = new Crudoperation();
+		con=(Connection) crudoperation.createConnection();
 		String str3="select * from address where UserId=?";
 		try{
 			ps3=(PreparedStatement) con3.prepareStatement(str3); 
@@ -99,7 +101,8 @@ public class Address {
 	}
 	//get address by id in string format to insert in order table
 	public static String getAddressById(int addressid){
-		con2=(Connection) Crudoperation.createConnection();
+		Crudoperation crudoperation = new Crudoperation();
+		con=(Connection) crudoperation.createConnection();
 		String str="select * from Address where AddressId=?";
 		String address="";
 		try{
@@ -121,7 +124,8 @@ public class Address {
 		
 	}
 	public static void deleteAddress(int addressid){
-		con1=(Connection) Crudoperation.createConnection();
+		Crudoperation crudoperation = new Crudoperation();
+		con=(Connection) crudoperation.createConnection();
 		String str2="delete from address where addressid=?";
 		try{
 			ps1=(PreparedStatement) con1.prepareStatement(str2);
@@ -134,7 +138,8 @@ public class Address {
 	}
 	
 	 public static void updateAddress(model.Address address,int addressid){
-		 con4=(Connection) Crudoperation.createConnection();
+			Crudoperation crudoperation = new Crudoperation();
+			con=(Connection) crudoperation.createConnection();
 		 String str4="update address set housenumber=?,street=?,City=?,State=?,Country=?,pincode=?,fullname=?,phone=? where Addressid=?";
 		 try{
 			 ps4=(PreparedStatement) con4.prepareStatement(str4);

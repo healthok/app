@@ -11,7 +11,7 @@ import com.mysql.jdbc.ResultSet;
 
 public class Personalinfo {
 	
-	static Connection con2=null;
+	static Connection con=null;
 	static PreparedStatement ps2=null;
 	static ResultSet rs2=null;
 	
@@ -19,10 +19,11 @@ public class Personalinfo {
 		//model.Order order=new model.Order();
 		ArrayList<model.Order> orders =new ArrayList<model.Order>();
 		int userid=dal.GetUserId.userid(username);
-		con2=(Connection) Crudoperation.createConnection();
+		Crudoperation crudoperation = new Crudoperation();
+		con=(Connection) crudoperation.createConnection();
 		String str1="select * from healthok.order where UserId=?";
 		try{
-			ps2=(PreparedStatement) con2.prepareStatement(str1);
+			ps2=(PreparedStatement) con.prepareStatement(str1);
 			ps2.setInt(1,userid);
 			rs2=(ResultSet) ps2.executeQuery();
 			while(rs2.next()){

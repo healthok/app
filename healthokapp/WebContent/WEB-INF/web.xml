@@ -16,8 +16,60 @@
     <url-pattern>/rest/*</url-pattern>
   </servlet-mapping>
   <env-entry> 
-    <env-entry-name>connection</env-entry-name> 
+    <env-entry-name>server</env-entry-name> 
     <env-entry-type>java.lang.String</env-entry-type> 
-    <env-entry-value>"jdbc:mysql://localhost:3306/healthok","root","root"</env-entry-value> 
+    <env-entry-value>localhost</env-entry-value> 
+  </env-entry> 
+  <env-entry> 
+    <env-entry-name>port</env-entry-name> 
+    <env-entry-type>java.lang.String</env-entry-type> 
+    <env-entry-value>3306</env-entry-value> 
+  </env-entry> 
+  <env-entry> 
+    <env-entry-name>dbname</env-entry-name> 
+    <env-entry-type>java.lang.String</env-entry-type> 
+    <env-entry-value>healthok</env-entry-value> 
+  </env-entry> 
+  <env-entry> 
+    <env-entry-name>user</env-entry-name> 
+    <env-entry-type>java.lang.String</env-entry-type> 
+    <env-entry-value>root</env-entry-value> 
+  </env-entry> 
+  <env-entry> 
+    <env-entry-name>password</env-entry-name> 
+    <env-entry-type>java.lang.String</env-entry-type> 
+    <env-entry-value>root</env-entry-value> 
 </env-entry>
+
+
+
+
+  <context-param> 
+    <description>server</description> 
+    <param-name>server</param-name> 
+    <param-value>localhost</param-value> 
+  </context-param> 
+  <context-param> 
+    <description>port</description> 
+    <param-name>port</param-name> 
+    <param-value>3306</param-value> 
+  </context-param> 
+  <context-param> 
+    <description>dbname</description> 
+    <param-name>dbname</param-name> 
+    <param-value>healthok</param-value> 
+  </context-param> 
+  <context-param> 
+    <description>user</description> 
+    <param-name>user</param-name> 
+    <param-value>root</param-value> 
+  </context-param> 
+  <context-param> 
+    <description>password</description> 
+    <param-name>password</param-name> 
+    <param-value>root</param-value> 
+  </context-param> 
+
+
+
 </web-app>

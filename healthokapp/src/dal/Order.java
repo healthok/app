@@ -22,7 +22,8 @@ public class Order {
 		java.util.Date dt=new java.util.Date();
 		java.sql.Date sd=new java.sql.Date(dt.getDate());
 		userid=dal.GetUserId.userid(username);
-		con=(Connection) Crudoperation.createConnection();
+		Crudoperation crudoperation = new Crudoperation();
+		con=(Connection) crudoperation.createConnection();
 		String str="insert into healthok.order (amount,status,Tax,ShippingCost,UserId,Address,Date) values (?,?,?,?,?,?,?)";
 		
 		try{
@@ -56,7 +57,8 @@ public class Order {
 	
 	public static model.Order getOrderDetail(int orderid){
 		model.Order order=new model.Order();
-		con=(Connection) Crudoperation.createConnection();
+		Crudoperation crudoperation = new Crudoperation();
+		con=(Connection) crudoperation.createConnection();
 		String str1="select * from healthok.order where orderId=?";
 		try{
 			ps2=(PreparedStatement) con.prepareStatement(str1);

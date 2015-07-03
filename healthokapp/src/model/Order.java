@@ -1,7 +1,5 @@
 package model;
 
-import java.sql.Date;
-
 public class Order {
 
 	private int orderId;
@@ -11,7 +9,6 @@ public class Order {
 	private int shippingcost;
 	private int userid;
 	private String address;
-	private Date date;
 
 	public int getOrderId() {
 		return orderId;
@@ -54,12 +51,6 @@ public class Order {
 	}
 	public void setAddress(String address) {
 		this.address = address;
-	}
-	public Date getDate() {
-		return date;
-	}
-	public void setDate(Date date) {
-		this.date = date;
 	}
 	
 	

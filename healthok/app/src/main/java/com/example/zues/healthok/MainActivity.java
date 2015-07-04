@@ -35,7 +35,7 @@ public class MainActivity extends Activity {
 
     private static final int CAMERA_REQUEST = 1888;
     ImageView search;
-    ImageView camera;
+
     ImageView call;
 
     Button logout;
@@ -57,7 +57,7 @@ public class MainActivity extends Activity {
         }
         sharedPreference=new SharedPreference();
 
-        camera=(ImageView)findViewById(R.id.camera);
+
         search=(ImageView)findViewById(R.id.searchbtn);
         call=(ImageView)findViewById(R.id.call);
         search.setOnClickListener(new OnClickListener() {
@@ -65,14 +65,6 @@ public class MainActivity extends Activity {
             public void onClick(View v) {
                 Intent intent=new Intent(MainActivity.this,Search.class);
                 startActivity(intent);
-            }
-        });
-        camera.setOnClickListener(new OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent camera = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
-
-                startActivityForResult(camera, CAMERA_REQUEST);
             }
         });
 
@@ -94,6 +86,12 @@ public class MainActivity extends Activity {
     {
         session.logoutUser();
         sharedPreference.delete(getApplicationContext());
+    }
+
+    public void openCamera(View view)
+    {
+        Intent intent=new Intent(MainActivity.this,Camera.class);
+        startActivity(intent);
     }
 
 }

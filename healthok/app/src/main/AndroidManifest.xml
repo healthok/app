@@ -47,6 +47,14 @@
             android:name=".Cart"
             android:label="@string/title_activity_cart" >
         </activity>
+        <activity
+            android:name=".OrderPlace"
+            android:label="@string/title_activity_order_place" >
+        </activity>
+        <activity
+            android:name=".Camera"
+            android:label="@string/title_activity_camera" >
+        </activity>
     </application>
 
 </manifest>

@@ -336,3 +336,27 @@ $routeProvider
 	    	templateUrl: 'cancel.html'
 	    })
 });
+angular.module('signupapp', [])
+.controller('signupController', ['$scope','$http', function($scope,$http) {
+	
+    $scope.sending = function() {
+    	var det={
+    	firstName : $scope.fname,
+    	lastName : $scope.lname,
+    	emailId : $scope.email,
+    	password : $scope.pass,
+    	phone : $scope.phone
+    	}
+    	$http.post(baseURL+'create/1',det).
+        success(function(data) {
+            $scope.greeting = data;
+            if($scope.greeting.status==1)
+            	{
+            	 window.location="login.html";
+            	}
+        });
+   
+    
+    };
+    }
+]);

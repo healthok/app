@@ -40,12 +40,14 @@ angular.module('formExample', [])
 .controller('ExampleController', ['$scope','$http', function($scope,$http) {
 	
     $scope.sending = function() {
-    	var fname=$scope.fname;
-    	var lname=$scope.lname;
-    	var email=$scope.email;
-    	var pass=$scope.pass;
-    	var phone=$scope.phone;
-    	$http.get('http://gshyam:8080/healthokapp/rest/signup/'+fname+'/'+lname+'/'+email+'/'+pass+'/'+phone).
+    	var det={
+    	firstName : $scope.fname,
+    	lastName : $scope.lname,
+    	emailId : $scope.email,
+    	password : $scope.pass,
+    	phone : $scope.phone
+    	}
+    	$http.post('http://gshyam:8080/healthokapp/rest/create/1',det).
         success(function(data) {
             $scope.greeting = data;
             if($scope.greeting.status==1)

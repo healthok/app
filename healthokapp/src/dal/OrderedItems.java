@@ -52,7 +52,7 @@ public class OrderedItems {
 		con=(Connection) crudoperation.createConnection();
 		String str1="SELECT * FROM healthok.ordereditems,healthok.medicine where healthok.ordereditems.orderid=? and healthok.ordereditems.medicineid=healthok.medicine.medicineid";
 		try{
-		ps1=(PreparedStatement) con1.prepareStatement(str1);
+		ps1=(PreparedStatement) con.prepareStatement(str1);
 		ps1.setInt(1,orderid);
 		rs=(ResultSet) ps1.executeQuery();
 		while(rs.next()){

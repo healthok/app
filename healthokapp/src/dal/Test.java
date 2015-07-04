@@ -56,7 +56,7 @@ public class Test {
 		con=(Connection) crudoperation.createConnection();
 		String str3="select * from address where UserId=?";
 		try{
-			ps3=(PreparedStatement) con3.prepareStatement(str3); 
+			ps3=(PreparedStatement) con.prepareStatement(str3); 
 			ps3.setInt(1,userid);
 			rs3=ps3.executeQuery();
 			while(rs3.next()){

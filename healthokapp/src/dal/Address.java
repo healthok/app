@@ -76,7 +76,7 @@ public class Address {
 		con=(Connection) crudoperation.createConnection();
 		String str3="select * from address where UserId=?";
 		try{
-			ps3=(PreparedStatement) con3.prepareStatement(str3); 
+			ps3=(PreparedStatement) con.prepareStatement(str3); 
 			ps3.setInt(1,userid);
 			rs3=ps3.executeQuery();
 			while(rs3.next()){
@@ -108,7 +108,7 @@ public class Address {
 		String str="select * from Address where AddressId=?";
 		String address="";
 		try{
-			ps2=(PreparedStatement) con2.prepareStatement(str); 
+			ps2=(PreparedStatement) con.prepareStatement(str); 
 			ps2.setInt(1,addressid);
 			rs2=ps2.executeQuery();
 			if(rs2.next()){
@@ -130,7 +130,7 @@ public class Address {
 		con=(Connection) crudoperation.createConnection();
 		String str2="delete from address where addressid=?";
 		try{
-			ps1=(PreparedStatement) con1.prepareStatement(str2);
+			ps1=(PreparedStatement) con.prepareStatement(str2);
 			ps1.setInt(1, addressid);
 			int rw=ps1.executeUpdate();
 		}
@@ -144,7 +144,7 @@ public class Address {
 			con=(Connection) crudoperation.createConnection();
 		 String str4="update address set housenumber=?,street=?,City=?,State=?,Country=?,pincode=?,fullname=?,phone=? where Addressid=?";
 		 try{
-			 ps4=(PreparedStatement) con4.prepareStatement(str4);
+			 ps4=(PreparedStatement) con.prepareStatement(str4);
 			 ps4.setString(1, address.getHousenumber());
 			 ps4.setString(2, address.getStreet());
 			 ps4.setString(3, address.getCity());

@@ -5,19 +5,21 @@
 <title>Insert title here</title> 
 </head>
 <body>
-<h1>HealtOk ok</h1>
-<form action="http://localhost:8080/healthokapp/rest/create/2" method="post">
+<h1>HealtOk</h1>
+<form action="/healthokapp/Login">
 <br>
-Enter name
+Enter Username
 <br>
-<input type="text" name="name"/>
+<input type="text" name="username">
 <br>
-Enter age
+Enter Password 
 <br>
-<input type="text" name="age"/>
+<input type="text" name="password">
 
-<input type="submit" value="Add info"/>
-<br>         
+<input type="submit" value="Log In">
+<br>
+<a href="/healthokapp/html/sign.html">New User</a>
+<a href="/healthokapp/html/forgotpass.html">Forgot Password</a>
 
 </form>
 </body>

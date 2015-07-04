@@ -16,7 +16,8 @@ public class GetAddressId {
 		int userid=0;
 		int addressid=0;
 		userid=dal.GetUserId.userid(username);
-		con=(Connection) Crudoperation.createConnection();
+		Crudoperation crudoperation = new Crudoperation();
+		con=(Connection) crudoperation.createConnection();
 		String str="select max(AddressId) from address where UserId=?";
 		try{
 			ps=(PreparedStatement) con.prepareStatement(str); 

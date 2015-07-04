@@ -35,7 +35,8 @@ public class Address {
 		int result=0;
 		int userid=dal.GetUserId.userid(username);
 		address.setUserId(userid);
-		con=(Connection) Crudoperation.createConnection();
+		Crudoperation crudoperation = new Crudoperation();
+		con=(Connection) crudoperation.createConnection();
 		String str1="insert into address(housenumber,street,city,state,country,pincode,userid,fullname,phone) values (?,?,?,?,?,?,?,?,?)";
 		try{
 			 ps=(PreparedStatement) con.prepareStatement(str1);
@@ -48,7 +49,9 @@ public class Address {
 			   ps.setInt(7, address.getUserId());
 			   ps.setString(8, address.getFullname());
 			   ps.setString(9, address.getPhone());
+			   
 			   int rw=ps.executeUpdate();
+			  
 			   if(rw>0)
 			   {
 				  result=dal.GetAddressId.getRecentAddressid(username);
@@ -69,10 +72,11 @@ public class Address {
 		int userid=dal.GetUserId.userid(username);
 		ArrayList<model.Address> addresses=new ArrayList<model.Address>();
 		long i=1;
-		con3=(Connection) Crudoperation.createConnection();
+		Crudoperation crudoperation = new Crudoperation();
+		con=(Connection) crudoperation.createConnection();
 		String str3="select * from address where UserId=?";
 		try{
-			ps3=(PreparedStatement) con3.prepareStatement(str3); 
+			ps3=(PreparedStatement) con.prepareStatement(str3); 
 			ps3.setInt(1,userid);
 			rs3=ps3.executeQuery();
 			while(rs3.next()){
@@ -99,11 +103,12 @@ public class Address {
 	}
 	//get address by id in string format to insert in order table
 	public static String getAddressById(int addressid){
-		con2=(Connection) Crudoperation.createConnection();
+		Crudoperation crudoperation = new Crudoperation();
+		con=(Connection) crudoperation.createConnection();
 		String str="select * from Address where AddressId=?";
 		String address="";
 		try{
-			ps2=(PreparedStatement) con2.prepareStatement(str); 
+			ps2=(PreparedStatement) con.prepareStatement(str); 
 			ps2.setInt(1,addressid);
 			rs2=ps2.executeQuery();
 			if(rs2.next()){
@@ -121,10 +126,11 @@ public class Address {
 		
 	}
 	public static void deleteAddress(int addressid){
-		con1=(Connection) Crudoperation.createConnection();
+		Crudoperation crudoperation = new Crudoperation();
+		con=(Connection) crudoperation.createConnection();
 		String str2="delete from address where addressid=?";
 		try{
-			ps1=(PreparedStatement) con1.prepareStatement(str2);
+			ps1=(PreparedStatement) con.prepareStatement(str2);
 			ps1.setInt(1, addressid);
 			int rw=ps1.executeUpdate();
 		}
@@ -134,10 +140,11 @@ public class Address {
 	}
 	
 	 public static void updateAddress(model.Address address,int addressid){
-		 con4=(Connection) Crudoperation.createConnection();
+			Crudoperation crudoperation = new Crudoperation();
+			con=(Connection) crudoperation.createConnection();
 		 String str4="update address set housenumber=?,street=?,City=?,State=?,Country=?,pincode=?,fullname=?,phone=? where Addressid=?";
 		 try{
-			 ps4=(PreparedStatement) con4.prepareStatement(str4);
+			 ps4=(PreparedStatement) con.prepareStatement(str4);
 			 ps4.setString(1, address.getHousenumber());
 			 ps4.setString(2, address.getStreet());
 			 ps4.setString(3, address.getCity());

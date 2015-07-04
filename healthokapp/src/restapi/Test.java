@@ -18,8 +18,8 @@ import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 import javax.ws.rs.core.Response.ResponseBuilder;
 
-import com.sun.jersey.core.header.FormDataContentDisposition;
-import com.sun.jersey.multipart.FormDataParam;
+//import com.sun.jersey.core.header.FormDataContentDisposition;
+//import com.sun.jersey.multipart.FormDataParam;
 
 
 
@@ -31,11 +31,25 @@ public class Test {
 	@POST
 	@Consumes(MediaType.APPLICATION_JSON)
 	@Produces(MediaType.APPLICATION_JSON)
-	public model.Medicine create(model.Medicine med){
-	   
-		return med;
+	public model.Result test(model.User user){
+		model.Result re=new model.Result();
+		int result;
+		result= biz.User.Save(user);
+		re.setStatus(result);
+		return re;
+		
 	}
 
+	@Path("/3/{username}")
+	@POST
+	@Consumes(MediaType.APPLICATION_JSON)
+	@Produces(MediaType.APPLICATION_JSON)
+	public model.Result test(model.Address address,@PathParam("username") String user){
+		model.Result res=new model.Result();
+		res.setStatus(biz.Address.sendAddress(address, user));
+		 return res;
+		
+	}
 	//----------@FormParam example
 	@POST
 	@Path("/2")

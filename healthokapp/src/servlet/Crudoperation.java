@@ -14,12 +14,21 @@ public  Connection createConnection()
 	try
 	{
 		Class.forName("com.mysql.jdbc.Driver");
-		String host="localhost";
+
+		String host="127.0.0.1";
+		String port ="3306";
+		String dbname = "healthok";
+		String username = "adminuzuSCxp";
+		String password = "GQBXVWgreeuA";
+
+		/*
+		String host="127.0.0.1";
 		String port ="3306";
 		String dbname = "healthok";
 		String username = "root";
 		String password = "root";
-				
+
+	*/	
 		
 		//Context env = (Context) new InitialContext().lookup("java:comp/env");
 //		String host =  context.getInitParameter("server");

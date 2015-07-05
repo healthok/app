@@ -22,6 +22,8 @@ public class ServiceHandler {
     public final static int GET = 1;
     public final static int POST = 2;
 
+    public static String urlbase = "http://app-myhealthok.rhcloud.com/healthokapp/rest/";
+
     public ServiceHandler() {
 
     }
@@ -43,8 +45,9 @@ public class ServiceHandler {
      * @method - http request method
      * @params - http request params
      */
-    public String makeServiceCall(String url, int method,
+    public String makeServiceCall(String urls, int method,
                                   List<NameValuePair> params) {
+String fullURL = urlbase+urls;
         try {
             // http client
             DefaultHttpClient httpClient = new DefaultHttpClient();
@@ -53,7 +56,7 @@ public class ServiceHandler {
 
             // Checking http request method type
             if (method == POST) {
-                HttpPost httpPost = new HttpPost(url);
+                HttpPost httpPost = new HttpPost(fullURL);
                 // adding post params
                 if (params != null) {
                     httpPost.setEntity(new UrlEncodedFormEntity(params));
@@ -66,9 +69,9 @@ public class ServiceHandler {
                 if (params != null) {
                     String paramString = URLEncodedUtils
                             .format(params, "utf-8");
-                    url += "?" + paramString;
+                    fullURL += "?" + paramString;
                 }
-                HttpGet httpGet = new HttpGet(url);
+                HttpGet httpGet = new HttpGet(fullURL);
 
                 httpResponse = httpClient.execute(httpGet);
 

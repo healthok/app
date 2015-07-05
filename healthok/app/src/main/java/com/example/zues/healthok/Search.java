@@ -141,7 +141,7 @@ public class Search extends Activity {
 
         medicine=(EditText)findViewById(R.id.medname);
         String medicinename=medicine.getText().toString();
-        url = "http://192.168.0.5:8080/healthokapp/rest/medicine/"+medicinename;
+        url = "medicine/"+medicinename;
         new GetContacts().execute();
 
     }
@@ -161,7 +161,7 @@ public class Search extends Activity {
 
         String finalprice=Double.toString(amount);
         fullObject.setPhone(finalprice);
-        url="http://192.168.0.5:8080/healthokapp/rest/buffer/"+username+"/"+productid+"/"+quantity;
+        url="buffer/"+username+"/"+productid+"/"+quantity;
         new AddCart().execute();
 
     }
@@ -182,7 +182,7 @@ public class Search extends Activity {
             newText = newText.replace(" ", "+");
             try {
                 HttpClient hClient = new DefaultHttpClient();
-                HttpGet hGet = new HttpGet("http://192.168.0.5:8080/healthokapp/rest/medicine/max/" + newText);
+                HttpGet hGet = new HttpGet(ServiceHandler.urlbase+"medicine/max/" + newText);
                 ResponseHandler<String> rHandler = new BasicResponseHandler();
                 data = hClient.execute(hGet, rHandler);
                 suggest = new ArrayList<String>();

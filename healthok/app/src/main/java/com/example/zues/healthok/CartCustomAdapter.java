@@ -92,7 +92,7 @@ public class CartCustomAdapter extends BaseAdapter {
                 item=searchArrayList.get(position);
                 medid=item.getMedicineId();
                 String pos=Integer.toString(position);
-               url="http://192.168.0.5:8080/healthokapp/rest/buffer/deobrat811@gmail.com/"+medid;
+               url="buffer/deobrat811@gmail.com/"+medid;
                 new GetContacts().execute();
 
                 searchArrayList.remove(position);

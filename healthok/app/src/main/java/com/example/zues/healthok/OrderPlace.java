@@ -49,7 +49,7 @@ public class OrderPlace extends ActionBarActivity {
         statetv=(TextView)findViewById(R.id.stateold);
         countrytv=(TextView)findViewById(R.id.countryold);
         pintv=(TextView)findViewById(R.id.pinold);
-        url="http://192.168.0.5:8080/healthokapp/rest/address/"+username;
+        url="address/"+username;
         new GetContacts().execute();
 
 
@@ -58,7 +58,7 @@ public class OrderPlace extends ActionBarActivity {
     public void orderplaced(View view)
     {
         String addId=Integer.toString(addressid);
-        url2="http://192.168.0.5:8080/healthokapp/rest/order/deobrat811@gmail.com/500/20/50/"+addId;
+        url2="order/deobrat811@gmail.com/500/20/50/"+addId;
         new PlaceAtOld().execute();
 
     }

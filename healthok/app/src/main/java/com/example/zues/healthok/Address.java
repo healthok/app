@@ -64,7 +64,7 @@ public class Address extends ActionBarActivity
         pincode=pincodetxt.getText().toString();
 
         name.setText(username);
-       url="http://192.168.0.5:8080/healthokapp/rest/address/"+house+"/"+street+"/"+city+"/"+state+"/"+country+"/"+pincode+"/"+username;
+       url="address/"+house+"/"+street+"/"+city+"/"+state+"/"+country+"/"+pincode+"/"+username;
         new GetContacts().execute();
     }
 

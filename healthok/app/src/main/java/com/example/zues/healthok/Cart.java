@@ -58,7 +58,7 @@ public class Cart extends ActionBarActivity {
         lv = (ListView) findViewById(R.id.cartitems);
         amounttv = (TextView) findViewById(R.id.amount);
         results = new ArrayList<CartProduct>();
-        url = "http://192.168.0.5:8080/healthokapp/rest/buffer/cart/"+username;
+        url = "buffer/cart/"+username;
 
         new GetContacts().execute();
 

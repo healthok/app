@@ -57,7 +57,7 @@ public class Login extends Activity
         username=uname.getText().toString();
         password=pass.getText().toString();
         session = new SessionManager(getApplicationContext());
-        url="http://192.168.0.5:8080/healthokapp/rest/auth/"+username+"/"+password;
+        url="auth/"+username+"/"+password;
         new GetContacts().execute();
     }
 

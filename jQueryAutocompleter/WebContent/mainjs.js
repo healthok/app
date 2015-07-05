@@ -1,4 +1,4 @@
-var baseURL="http://gshyam:8080/healthokapp/rest/";
+var baseURL="http://app-myhealthok.rhcloud.com/healthokapp/rest/";
 var app=angular.module('formExample', ['ngCookies']);
 app.controller('ExampleController', ['$scope','$http','$cookies','$cookieStore','$window', function($scope,$http,$cookies,$cookieStore,$window) 
 {

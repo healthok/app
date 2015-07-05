@@ -15,7 +15,8 @@ public  Connection createConnection()
 	{
 		Class.forName("com.mysql.jdbc.Driver");
 
-		String host="127.0.0.1";
+		//String host="127.0.0.1"; // with port forwarding 
+		String host="127.3.104.130"; // on Openshift
 		String port ="3306";
 		String dbname = "healthok";
 		String username = "adminuzuSCxp";

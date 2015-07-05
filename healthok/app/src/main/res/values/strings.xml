@@ -44,5 +44,7 @@
     <string name="title_activity_address">Address</string>
     <string name="title_activity_cart">Cart</string>
     <string name="title_activity_order_address">OrderAddress</string>
+    <string name="title_activity_order_place">OrderPlace</string>
+    <string name="title_activity_camera">Camera</string>
 
 </resources>

@@ -43,7 +43,7 @@ public class Buffer {
 		con=(Connection) crudoperation.createConnection();
 		String str1="insert into buffer(quantity,UserId,medicineId) values (?,?,?)";
 		try{
-			ps1=(PreparedStatement) con1.prepareStatement(str1);
+			ps1=(PreparedStatement) con.prepareStatement(str1);
 			ps1.setInt(1, quantity);
 			ps1.setInt(2, userid);
 			ps1.setInt(3, medicineid);
@@ -71,7 +71,7 @@ public class Buffer {
 		con=(Connection) crudoperation.createConnection();
 		String str2="delete from buffer where UserID=? and medicineId=?";
 		try{
-			ps2=(PreparedStatement) con2.prepareStatement(str2);
+			ps2=(PreparedStatement) con.prepareStatement(str2);
 			ps2.setInt(1, userid);
 			ps2.setInt(2, medicineid);
 			int rw=ps2.executeUpdate();
@@ -131,7 +131,7 @@ public class Buffer {
 		con=(Connection) crudoperation.createConnection();
 		String str3="delete from buffer where UserID=? ";
 		try{
-			ps3=(PreparedStatement) con3.prepareStatement(str3);
+			ps3=(PreparedStatement) con.prepareStatement(str3);
 			ps3.setInt(1, userid);
 			int rw=ps3.executeUpdate();
 			if(rw>0)
@@ -158,7 +158,7 @@ public class Buffer {
 		con=(Connection) crudoperation.createConnection();
 		String str4="update buffer set quantity=? where userid=? and medicineid=? ";
 		try{
-			ps4=(PreparedStatement) con4.prepareStatement(str4);
+			ps4=(PreparedStatement) con.prepareStatement(str4);
 			ps4.setInt(1, quantity);
 			ps4.setInt(2, userid);
 			ps4.setInt(3, medicineid);
@@ -187,7 +187,7 @@ public class Buffer {
 		String str1="SELECT * FROM healthok.buffer,healthok.medicine where healthok.buffer.userid=? and healthok.buffer.medicineid=healthok.medicine.medicineid";
 
 		try{
-		ps5=(PreparedStatement) con5.prepareStatement(str1);
+		ps5=(PreparedStatement) con.prepareStatement(str1);
 		ps5.setInt(1,userid);
 		rs5=(ResultSet) ps5.executeQuery();
 		while(rs5.next()){

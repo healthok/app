@@ -25,7 +25,7 @@ static ResultSet rs1=null;
 	public static model.Medicine sendMedicine(String name){
 		
 		Crudoperation crudoperation = new Crudoperation();
-		con=(Connection) crudoperation.createConnection();
+		con =(Connection) crudoperation.createConnection();
 		model.Medicine medicine=new model.Medicine();
 		String str="select * from medicine where medicineName=?";
 		try

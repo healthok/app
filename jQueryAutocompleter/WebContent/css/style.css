@@ -91,7 +91,7 @@ Header
   z-index: 2;
   top: 0;
   left: 0;
-  height: 45px;
+  height:100px;
   width: 100%;
   background: #3e454c;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
@@ -384,6 +384,9 @@ Sidebar
   -webkit-transition: opacity 0.2s 0s, visibility 0s 0.2s;
   -moz-transition: opacity 0.2s 0s, visibility 0s 0.2s;
   transition: opacity 0.2s 0s, visibility 0s 0.2s;
+}
+.cd-top-nav nav-right{
+margin-top:0px;
 }
 .cd-side-nav.nav-is-visible {
   opacity: 1;
@@ -727,4 +730,21 @@ Sidebar
     opacity: 1;
     visibility: visible;
   }
+}
+.aside{
+float:right;
+background-color:#3e454c;
+width:255px;
+height:100px;
+text-align:center;
+margin-right:0px;
+}
+.aside marquee{
+width:255px;
+height:270px;
+background-color:#0099ff ;
+behavior:scroll;
+}
+.aside marquee ol{
+margin-left:10px;
 }

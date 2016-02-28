@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bck1">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="center_horizontal"
+        android:weightSum="1">
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:id="@+id/editText3"
+            android:hint="FIRSTNAME"
+            android:textSize="20dp"
+            android:layout_marginLeft="2dp"
+            android:layout_marginRight="2dp"
+            android:layout_marginBottom="2dp"
+            android:background="#20FFFFFF"
+            android:layout_gravity="center_horizontal" />
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:id="@+id/editText4"
+            android:hint="LASTNAME"
+            android:textSize="20dp"
+            android:layout_marginLeft="2dp"
+            android:layout_marginRight="2dp"
+            android:layout_marginBottom="2dp"
+            android:background="#20FFFFFF"
+            android:layout_gravity="center_horizontal" />
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:inputType="phone"
+            android:hint="PHONE NO.*"
+            android:textSize="20dp"
+            android:layout_marginLeft="2dp"
+            android:layout_marginRight="2dp"
+            android:layout_marginBottom="2dp"
+            android:ems="10"
+            android:background="#20FFFFFF"
+            android:id="@+id/editText5" />
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:inputType="textEmailAddress"
+            android:ems="10"
+            android:layout_marginLeft="2dp"
+            android:textSize="20dp"
+            android:layout_marginRight="2dp"
+            android:layout_marginBottom="2dp"
+            android:background="#20FFFFFF"
+            android:hint="E.MAIL"
+            android:id="@+id/editText6"
+            android:layout_gravity="center_horizontal" />
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:inputType="textPassword"
+            android:layout_marginLeft="2dp"
+            android:textSize="20dp"
+            android:layout_marginRight="2dp"
+            android:layout_marginBottom="2dp"
+            android:hint="PASSWORD"
+            android:background="#20FFFFFF"
+            android:ems="10"
+            android:id="@+id/editText7"
+            android:layout_gravity="center_horizontal" />
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:inputType="textPassword"
+            android:hint="RE ENTER PASSWORD"
+            android:textSize="20dp"
+
+            android:layout_marginLeft="2dp"
+            android:layout_marginRight="2dp"
+            android:layout_marginBottom="2dp"
+            android:background="#20FFFFFF"
+            android:ems="10"
+            android:id="@+id/editText8"
+            android:layout_gravity="center_horizontal" />
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="CONFIRM"
+            android:layout_marginRight="5dp"
+            android:textSize="30dp"
+            android:layout_marginLeft="5dp"
+            android:background="#402D3048"
+            android:id="@+id/button3"
+            android:layout_weight="0.08" />
+    </LinearLayout>
+</LinearLayout>

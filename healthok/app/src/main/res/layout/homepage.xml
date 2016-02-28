@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#363951">
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="90dp"
+        android:layout_marginTop="120dp"
+        android:background="#363951"
+        android:layout_gravity="center_horizontal">
+
+        <ImageView
+            android:layout_width="90dp"
+            android:layout_height="90dp"
+            android:background="@drawable/transport"
+            android:layout_marginLeft="150dp"
+            android:id="@+id/imageView9" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="90dp"
+        android:background="#363951"
+        android:layout_gravity="center_horizontal">
+
+        <ImageView
+            android:layout_width="85dp"
+            android:layout_marginLeft="80dp"
+            android:layout_height="85dp"
+            android:id="@+id/imageView10"
+            android:background="@drawable/doctor"/>
+
+        <ImageView
+            android:layout_width="85dp"
+            android:layout_height="85dp"
+            android:layout_marginLeft="70dp"
+            android:id="@+id/imageView11"
+            android:background="@drawable/home"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="90dp"
+        android:background="#363951"
+        android:layout_gravity="center_horizontal">
+
+        <ImageView
+            android:layout_width="85dp"
+            android:layout_height="85dp"
+            android:id="@+id/imageView12"
+            android:background="@drawable/medicine"/>
+
+        <ImageView
+            android:layout_width="85dp"
+            android:layout_height="85dp"
+            android:id="@+id/imageView13"
+            android:layout_marginLeft="70dp"
+            android:background="@drawable/userpic"/>
+
+        <ImageView
+            android:layout_width="85dp"
+            android:layout_height="85dp"
+            android:id="@+id/imageView14"
+            android:background="@drawable/path"
+            android:layout_marginLeft="65dp"/>
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:background="#363951"
+        android:layout_gravity="center_horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text="FEELING LAZY?"
+            android:textColor="#FFFFFF"
+            android:layout_marginLeft="140dp"
+            android:id="@+id/textView9" />
+    </LinearLayout>
+
+    <Button
+        android:layout_width="170dp"
+        android:layout_height="70dp"
+        android:text="CALL ME BACK"
+        android:id="@+id/button4"
+        android:background="#FFBF00"
+        android:layout_gravity="center_horizontal" />
+</LinearLayout>

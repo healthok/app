@@ -90,9 +90,9 @@
             android:layout_alignParentStart="true"
             android:layout_alignParentRight="true"
             android:layout_alignParentEnd="true"
-            bootstrapbutton:be_roundedCorners="true"
+
             android:gravity="center"
-            bootstrapbutton:be_state="success"
+
             />
 
         <com.beardedhen.androidbootstrap.BootstrapEditText
@@ -107,9 +107,9 @@
             android:layout_alignParentStart="true"
             android:layout_alignParentRight="true"
             android:layout_alignParentEnd="true"
-            bootstrapbutton:be_roundedCorners="true"
+
             android:gravity="center"
-            bootstrapbutton:be_state="success"
+
             />
 
         <com.beardedhen.androidbootstrap.BootstrapEditText
@@ -124,9 +124,9 @@
             android:layout_alignParentStart="true"
             android:layout_alignParentRight="true"
             android:layout_alignParentEnd="true"
-            bootstrapbutton:be_roundedCorners="true"
+
             android:gravity="center"
-            bootstrapbutton:be_state="success"
+
             />
 
         <com.beardedhen.androidbootstrap.BootstrapEditText
@@ -141,9 +141,9 @@
             android:layout_alignParentStart="true"
             android:layout_alignParentRight="true"
             android:layout_alignParentEnd="true"
-            bootstrapbutton:be_roundedCorners="true"
+
             android:gravity="center"
-            bootstrapbutton:be_state="success"
+
             />
 
         <com.beardedhen.androidbootstrap.BootstrapEditText
@@ -158,9 +158,8 @@
             android:layout_alignParentStart="true"
             android:layout_alignParentRight="true"
             android:layout_alignParentEnd="true"
-            bootstrapbutton:be_roundedCorners="true"
             android:gravity="center"
-            bootstrapbutton:be_state="success"
+
             />
 
         <com.beardedhen.androidbootstrap.BootstrapEditText
@@ -176,9 +175,9 @@
             android:layout_alignParentStart="true"
             android:layout_alignParentRight="true"
             android:layout_alignParentEnd="true"
-            bootstrapbutton:be_roundedCorners="true"
+
             android:gravity="center"
-            bootstrapbutton:be_state="success"
+
             />
 
         <com.beardedhen.androidbootstrap.BootstrapButton
@@ -193,7 +192,7 @@
             android:layout_alignParentStart="true"
             android:layout_alignParentRight="true"
             android:layout_alignParentEnd="true"
-            bootstrap:bb_type="primary"
+
             />
 
 

@@ -1,10 +1,13 @@
 package com.example.zues.healthok;
 
 
+import android.app.ActionBar;
 import android.app.Activity;
 import android.app.ListActivity;
 import android.app.ProgressDialog;
 import android.content.Intent;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
@@ -34,7 +37,7 @@ public class Signup extends Activity
     EditText fname,lname,mail,pass,pnum;
     String firstname,lastname,email,password,phone;
 
-    private static String url;
+    private static String url="http://app-myhealthok.rhcloud.com/healthokapp/rest/EmailRegister/access";
     String status;
 
     JSONObject result = null;
@@ -43,7 +46,9 @@ public class Signup extends Activity
     public void onCreate(Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_signup);
+        setContentView(R.layout.registration);
+        ActionBar actionBar=getActionBar();
+        actionBar.setBackgroundDrawable(new ColorDrawable(Color.rgb(24,178,244)));
     }
     public void register(View view)
     {

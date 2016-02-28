@@ -427,7 +427,6 @@ Sidebar
 	> ul > li > a {
 		padding-left: calc(5% + 24px);
 		border-bottom: 1px solid darken($color-1, 3%);
-
 		&::before {
 			/* icon before item name */
 			position: absolute;
@@ -438,6 +437,7 @@ Sidebar
 			width: 16px;
 			background: url(../img/cd-nav-icons.svg) no-repeat 0 0;
 		}
+
 	}
 
 	> ul > li.overview > a::before {

@@ -120,6 +120,6 @@
         android:layout_height="60dp"
         android:text="CALL ME BACK"
         android:id="@+id/button4"
-        android:background="#99800000"
+        android:background="#99FFFFFF"
         android:layout_gravity="center_horizontal" />
 </LinearLayout>

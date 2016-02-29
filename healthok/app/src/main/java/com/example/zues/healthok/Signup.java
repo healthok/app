@@ -7,6 +7,7 @@ import android.app.ListActivity;
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.graphics.Color;
+import android.graphics.Typeface;
 import android.graphics.drawable.ColorDrawable;
 import android.os.AsyncTask;
 import android.os.Bundle;
@@ -49,6 +50,13 @@ public class Signup extends Activity
         setContentView(R.layout.registration);
         ActionBar actionBar=getActionBar();
         actionBar.setBackgroundDrawable(new ColorDrawable(Color.rgb(24,178,244)));
+        Typeface cg=Typeface.createFromAsset(getAssets(),"centurygothic.ttf");
+        EditText uname=(EditText)findViewById(R.id.uname);
+        EditText pswd=(EditText)findViewById(R.id.pswd);
+        Button signin=(Button)findViewById(R.id.signin);
+        signin.setTypeface(cg);
+        uname.setTypeface(cg);
+        pswd.setTypeface(cg);
     }
     public void register(View view)
     {

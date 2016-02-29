@@ -51,7 +51,7 @@
 			
 			<ul class="cd-top-nav">
 				
-				<li><a href="#">HOME</a></li>
+				<li><a href="my_profile"><i class="fa fa-home"></i>HOME</a></li>
 				<li><a href="#"> PHARMACY</a></li>
 				<li><a href="#">DIAGNOSTICS</a></li>
 				<li><a href="#">HOME NURSING</a></li>
@@ -77,10 +77,10 @@
 			<ul>
 				<li class="cd-label"></li>
 				<li class="active">
-					<a href="#0"><i class="fa fa-user"></i> MY PROFILE</a>
+					<a href="my_profile"><i class="fa fa-user"></i> MY PROFILE</a>
 					
 				</li>
-				<li class="has-children overview">
+				<li class="has-children overview" >
 					<a href="#0"><i class="fa fa-calendar"></i> BOOK APPOINTMENT<span class="arrow"></span></a>
 					
 					<ul>
@@ -100,7 +100,7 @@
 				</li>
 
 				<li class="has-children users">
-					<a href="reports.html"><i class="fa fa-clipboard"></i> REPORTS</a>
+					<a href="reports_new.html"><i class="fa fa-clipboard"></i> REPORTS</a>
 					</li>
 			
 			
@@ -183,11 +183,11 @@ app.controller('myCtrl', function($scope) {
   <div class="aside">		
 <h4 style="font:bold 20px; color:white; text-align:center">STATUS</h4>
 <marquee direction="up" onmouseover="stop();" onmouseout="start();">
-<ol style="list-style-type:circle">
+<ul>
 <li><p>Don't miss your appointment on scheduled date.</p></li>
 <li><p>You test reports are available. Please download it from reports section.</p></li>
 <li><p>You have one pending appointment.</p></li>
-</ol>
+</ul>
 </marquee>
 </div>
 </div>	

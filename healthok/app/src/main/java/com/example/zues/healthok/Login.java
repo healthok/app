@@ -8,6 +8,7 @@ import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
 import android.util.Log;
+import android.util.Pair;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -19,12 +20,16 @@ import android.widget.Toast;
 import com.example.zues.healthok.util.ServiceHandler;
 
 import java.lang.String;
+
+import org.apache.http.NameValuePair;
+import org.apache.http.message.BasicNameValuePair;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 
 public class Login extends Activity
 {
@@ -32,15 +37,15 @@ public class Login extends Activity
     Button log;
     EditText uname;
     EditText pass;
-    String username;
+    String username ;
     String password;
 
     SessionManager session;
 
     // URL to get contacts JSON
-    private static String url;
+    private static String url="EmailRegister/access";
 
-    String status;
+    String status="-1";
     String jsonStr;
     // contacts JSONArray
     JSONObject result = null;
@@ -57,15 +62,17 @@ public class Login extends Activity
         username=uname.getText().toString();
         password=pass.getText().toString();
         session = new SessionManager(getApplicationContext());
-        url="auth/"+username+"/"+password;
+        url="url"+username+"/"+password;
         new GetContacts().execute();
+
     }
+
 
     public  void gotosignup(View view)
     {
         Intent intent=new Intent(Login.this,Signup.class);
         startActivity(intent);
-;
+
     }
 
     private class GetContacts extends AsyncTask<Void, Void, Void> {
@@ -89,8 +96,12 @@ public class Login extends Activity
         ServiceHandler sh = new ServiceHandler();
 
         // Making a request to url and getting response
-        jsonStr = sh.makeServiceCall(url, ServiceHandler.GET);
+        // buid name value pair
+        List<NameValuePair> params = new ArrayList<>(2);
+        params.add(new BasicNameValuePair("email", "len.2706@gmail.com"));
+        params.add(new BasicNameValuePair("password", "123456"));
 
+//jsonStr = "not called";
         Log.d("Response: ", "> " + jsonStr);
 
         if (jsonStr != null) {
@@ -116,7 +127,7 @@ public class Login extends Activity
         if(status.equals("5"))
         {
             session.createLoginSession(username);
-            Intent intent=new Intent(Login.this,MainActivity.class);
+            Intent intent=new Intent(Login.this,HomePage.class);
             startActivity(intent);
         }
         else

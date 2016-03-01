@@ -15,7 +15,7 @@ public class HomePage extends Activity {
     public void onCreate(Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.registration);
+        setContentView(R.layout.homepage);
         ActionBar actionBar=getActionBar();
         actionBar.setBackgroundDrawable(new ColorDrawable(Color.rgb(24, 178, 244)));
     }

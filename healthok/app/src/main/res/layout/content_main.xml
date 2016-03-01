@@ -26,7 +26,7 @@
         android:hint="USERNAME"
 
         android:layout_marginLeft="28dp"
-        android:id="@+id/editText"
+        android:id="@+id/uname"
         android:layout_marginTop="53dp"
         android:layout_below="@+id/imageView"
         android:layout_centerHorizontal="true" />
@@ -38,8 +38,8 @@
         android:layout_marginTop="5dp"
         android:inputType="textPassword"
         android:ems="10"
-        android:id="@+id/editText2"
-        android:layout_below="@+id/editText"
+        android:id="@+id/password"
+        android:layout_below="@+id/uname"
         />
 
     <Button
@@ -50,7 +50,7 @@
 
 
         android:id="@+id/button"
-        android:layout_below="@+id/editText2"
+        android:layout_below="@+id/password"
          />
 
     <TextView

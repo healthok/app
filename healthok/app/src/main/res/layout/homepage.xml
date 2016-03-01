@@ -2,14 +2,14 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#FFFFFF">
+    android:background="@drawable/bck8">
 
     <LinearLayout
         android:orientation="horizontal"
         android:layout_width="match_parent"
         android:layout_height="52dp"
-        android:layout_marginTop="80dp"
-        android:background="#FFFFFF"
+        android:layout_marginTop="130dp"
+
         android:layout_gravity="center_horizontal">
 
         <ImageView
@@ -17,7 +17,7 @@
             android:layout_height="50dp"
             android:background="@drawable/doctor22"
             android:layout_gravity="center"
-            android:layout_marginLeft="170dp"
+            android:layout_marginLeft="164dp"
             android:id="@+id/imageView9" />
     </LinearLayout>
     <LinearLayout
@@ -25,7 +25,7 @@
         android:layout_width="match_parent"
         android:layout_height="21dp"
 
-        android:background="#FFFFFF"
+
         android:layout_gravity="center_horizontal">
 
         <TextView
@@ -34,7 +34,8 @@
             android:textAppearance="?android:attr/textAppearanceLarge"
             android:text="DOCTOR'S APPT."
             android:textSize="15dp"
-            android:layout_marginLeft="150dp"
+            android:textColor="#FFFFFF"
+            android:layout_marginLeft="134dp"
             android:id="@+id/textView24" />
     </LinearLayout>
 
@@ -42,12 +43,12 @@
         android:orientation="horizontal"
         android:layout_width="match_parent"
         android:layout_height="60dp"
-        android:background="#FFFFFF"
+
         android:layout_gravity="center_horizontal">
 
         <ImageView
             android:layout_width="50dp"
-            android:layout_marginLeft="85dp"
+            android:layout_marginLeft="79dp"
             android:layout_height="50dp"
             android:id="@+id/imageView10"
             android:background="@drawable/transport22"/>
@@ -55,7 +56,7 @@
         <ImageView
             android:layout_width="50dp"
             android:layout_height="50dp"
-            android:layout_marginLeft="120dp"
+            android:layout_marginLeft="114dp"
             android:id="@+id/imageView11"
             android:background="@drawable/nurse23"/>
     </LinearLayout>
@@ -64,7 +65,7 @@
         android:layout_width="match_parent"
         android:layout_height="21dp"
 
-        android:background="#FFFFFF"
+
         android:layout_gravity="center_horizontal">
 
         <TextView
@@ -72,8 +73,9 @@
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceLarge"
             android:text="TRANSPORT"
+            android:textColor="#FFFFFF"
             android:textSize="15dp"
-            android:layout_marginLeft="28dp"
+            android:layout_marginLeft="58dp"
             android:id="@+id/textView25" />
 
         <TextView
@@ -81,7 +83,8 @@
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceLarge"
             android:text="NURSING"
-            android:layout_marginLeft="50dp"
+            android:textColor="#FFFFFF"
+            android:layout_marginLeft="94dp"
             android:textSize="15dp"
             android:id="@+id/textView26" />
     </LinearLayout>
@@ -89,21 +92,21 @@
         android:orientation="horizontal"
         android:layout_width="match_parent"
         android:layout_height="60dp"
-        android:background="#FFFFFF"
+
         android:layout_gravity="center_horizontal">
 
         <ImageView
             android:layout_width="50dp"
             android:layout_height="50dp"
-            android:layout_marginLeft="50dp"
+            android:layout_marginLeft="44dp"
             android:id="@+id/imageView12"
-            android:background="@drawable/medicine22"/>
+            android:background="@drawable/medicinebox"/>
 
         <ImageView
             android:layout_width="60dp"
             android:layout_height="60dp"
             android:id="@+id/imageView13"
-            android:layout_marginLeft="66dp"
+            android:layout_marginLeft="60dp"
             android:gravity="center_horizontal"
 
             android:scaleType="center"
@@ -113,7 +116,7 @@
             android:layout_width="50dp"
             android:layout_height="50dp"
             android:id="@+id/imageView14"
-            android:layout_marginLeft="66dp"
+            android:layout_marginLeft="56dp"
             android:background="@drawable/microscop22"
            />
 
@@ -124,7 +127,7 @@
         android:layout_width="match_parent"
         android:layout_height="21dp"
 
-        android:background="#FFFFFF"
+
         android:layout_gravity="center_horizontal">
 
         <TextView
@@ -132,7 +135,9 @@
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceLarge"
             android:text="MEDICINE"
+            android:textColor="#FFFFFF"
             android:textSize="15dp"
+            android:layout_marginLeft="34dp"
             android:id="@+id/textView27" />
 
         <TextView
@@ -140,8 +145,9 @@
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceLarge"
             android:text="PATHOLOGY"
-            android:layout_marginLeft="150dp"
+            android:layout_marginLeft="154dp"
             android:textSize="15dp"
+            android:textColor="#FFFFFF"
             android:id="@+id/textView28" />
     </LinearLayout>
 
@@ -149,7 +155,7 @@
         android:orientation="horizontal"
         android:layout_width="match_parent"
         android:layout_height="40dp"
-        android:background="#FFFFFF"
+
         android:layout_gravity="center_horizontal">
 
         <TextView
@@ -158,7 +164,7 @@
             android:textAppearance="?android:attr/textAppearanceMedium"
             android:text="FEELING LAZY?"
             android:textColor="#FFFFFF"
-            android:layout_marginLeft="140dp"
+            android:layout_marginLeft="134dp"
             android:id="@+id/textView9" />
     </LinearLayout>
 
@@ -167,6 +173,6 @@
         android:layout_height="60dp"
         android:text="CALL ME BACK"
         android:id="@+id/button4"
-        android:background="#99FFFFFF"
+        android:background="#44FFFFFF"
         android:layout_gravity="center_horizontal" />
 </LinearLayout>

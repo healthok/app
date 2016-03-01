@@ -27,12 +27,12 @@ import java.util.List;
 public class Login extends Activity
 {
     private ProgressDialog pDialog;
-    Button log;
+
     EditText uname;
     EditText pass;
     String username ;
     String password;
-
+Button log;
     SessionManager session;
 
     // URL to get contacts JSON
@@ -55,6 +55,16 @@ public class Login extends Activity
                 startActivity(in);
             }
         });
+        log=(Button)findViewById(R.id.signin);
+        log.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                /*Intent in=new Intent(getApplicationContext(),HomePage.class);
+                startActivity(in);*/
+                setContentView(R.layout.homepage);
+            }
+        });
+
     }
     public void gotoprofile(View view)
     {

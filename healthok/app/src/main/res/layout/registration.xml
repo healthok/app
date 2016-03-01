@@ -94,11 +94,12 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="CONFIRM"
+            android:textColor="#555555"
             android:layout_marginRight="5dp"
-            android:textSize="30dp"
+            android:textSize="25dp"
             android:layout_marginLeft="5dp"
             android:background="#402D3048"
-            android:id="@+id/button3"
+            android:id="@+id/confirm"
             android:layout_weight="0.08" />
     </LinearLayout>
 </LinearLayout>

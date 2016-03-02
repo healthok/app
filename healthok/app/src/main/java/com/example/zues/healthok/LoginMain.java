@@ -16,7 +16,7 @@ public class LoginMain extends Activity {
     public void onCreate(Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.content_main);
+        setContentView(R.layout.activity_main);
         ActionBar actionBar=getActionBar();
         actionBar.setBackgroundDrawable(new ColorDrawable(Color.rgb(24, 178, 244)));
         TextView textview=(TextView)findViewById(R.id.textView20);

@@ -35,25 +35,35 @@
     <LinearLayout
         android:orientation="horizontal"
         android:layout_width="match_parent"
-        android:layout_height="53dp"
+        android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
         android:layout_gravity="center_horizontal">
-        <ImageView
-        android:layout_width="20dp"
-        android:layout_height="15dp"
-            android:layout_marginLeft="5dp"
-        android:id="@+id/imageView22"
-            android:layout_marginTop="28dp"
-        android:background="@drawable/downarrow"/>
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="30dp"
+            android:layout_height="40dp"
+            android:background="#40FFFFFF"
+            android:layout_marginTop="20dp">
+
+            <ImageView
+                android:layout_width="20dp"
+                android:layout_height="15dp"
+                android:layout_marginTop="8dp"
+                android:id="@+id/imageView15"
+                android:layout_marginLeft="5dp"
+                android:background="@drawable/downarrow"/>
+        </LinearLayout>
+
         <EditText
             android:layout_width="match_parent"
             android:layout_height="40dp"
             android:background="#40FFFFFF"
-            android:layout_marginLeft="8dp"
+            android:layout_marginLeft="5dp"
             android:layout_marginRight="8dp"
             android:textColor="#CCCCCC"
             android:inputType="textPersonName"
-            android:text="Search by name"
+            android:hint=" Search by name"
             android:ems="10"
             android:textSize="15dp"
             android:layout_marginTop="20dp"
@@ -64,18 +74,29 @@
         android:layout_height="53dp"
         android:layout_marginTop="20dp"
         android:layout_gravity="center_horizontal">
-        <ImageView
-            android:layout_width="20dp"
-            android:layout_height="15dp"
-            android:layout_marginLeft="5dp"
-            android:id="@+id/imageView23"
-            android:layout_marginTop="8dp"
-            android:background="@drawable/downarrow"/>
+
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="30dp"
+            android:layout_height="40dp"
+
+            android:background="#40FFFFFF">
+
+            <ImageView
+                android:layout_width="20dp"
+                android:layout_height="15dp"
+                android:id="@+id/imageView16"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="8dp"
+                android:background="@drawable/downarrow"/>
+        </LinearLayout>
+
         <EditText
             android:layout_width="match_parent"
-            android:layout_height="40dp"
+            android:layout_height="39dp"
             android:id="@+id/editText11"
-            android:layout_marginLeft="8dp"
+            android:layout_marginLeft="5dp"
             android:textColor="#CCCCCC"
             android:textSize="15dp"
             android:layout_marginRight="8dp"
@@ -89,19 +110,28 @@
             android:layout_height="53dp"
             android:layout_marginTop="20dp"
             android:layout_gravity="center_horizontal">
-            <ImageView
-                android:layout_width="20dp"
-                android:layout_height="15dp"
-                android:id="@+id/imageView24"
-                android:layout_marginTop="8dp"
-                android:layout_marginLeft="5dp"
-                android:background="@drawable/downarrow"/>
-        <EditText
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="30dp"
+                android:layout_height="40dp"
+                android:background="#40FFFFFF">
+
+                <ImageView
+                    android:layout_width="20dp"
+                    android:layout_height="15dp"
+                    android:id="@+id/imageView17"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginLeft="5dp"
+                    android:background="@drawable/downarrow"/>
+            </LinearLayout>
+
+            <EditText
             android:layout_width="match_parent"
             android:layout_height="40dp"
             android:inputType="number"
             android:layout_marginTop="20dp"
-            android:layout_marginLeft="8dp"
+            android:layout_marginLeft="5dp"
             android:layout_marginRight="8dp"
             android:textColor="#CCCCCC"
             android:ems="10"

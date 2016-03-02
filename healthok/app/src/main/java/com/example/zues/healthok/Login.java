@@ -107,7 +107,6 @@ public class Login extends Activity
             jsonStr=sh.makeServiceCall(url, ServiceHandler.POST,params);
 
 //jsonStr = "not called";
-<<<<<<< HEAD
             Log.d("Response: ", "> " + jsonStr);
 
             if (jsonStr != null) {
@@ -119,16 +118,6 @@ public class Login extends Activity
                 }
             } else {
                 Log.e("ServiceHandler", "Couldn't get any data from the url");
-=======
-        Log.d("Response: ", "> " + jsonStr);
-
-        if (jsonStr != null) {
-            try {
-                result = new JSONObject(jsonStr);
-                status = result.getString(jsonStr);
-            } catch (JSONException e) {
-                e.printStackTrace();
->>>>>>> origin/master
             }
 
             return null;
@@ -147,32 +136,13 @@ public class Login extends Activity
             else
             {
 
-<<<<<<< HEAD
                 session.createLoginSession(username);
                 Intent intent=new Intent(getApplicationContext(),HomePage.class);
                 startActivity(intent);
             }
-=======
-    @Override
-    protected void onPostExecute(Void result) {
-        super.onPostExecute(result);
-        // Dismiss the progress dialog
-        if (pDialog.isShowing())
-            pDialog.dismiss();
-        if(status.equals("-1"))
-        {
-            Toast.makeText(getApplicationContext(), "WRONG PASSWORD", Toast.LENGTH_LONG).show();
-        }
-        else
-        {
-
-            session.createLoginSession(username);
-            Intent intent=new Intent(getApplicationContext(),HomePage.class);
-            startActivity(intent);
-        }
->>>>>>> origin/master
 
         }
 
-    }}
+    }
 
+}

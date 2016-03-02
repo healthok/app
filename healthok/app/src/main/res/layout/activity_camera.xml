@@ -26,7 +26,8 @@
             android:id="@+id/btnRecordVideo"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Record a Video" />
+            android:text="Record a Video"
+            android:background="@drawable/shape"/>
     </LinearLayout>
 
     <LinearLayout

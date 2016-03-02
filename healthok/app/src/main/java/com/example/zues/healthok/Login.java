@@ -61,7 +61,7 @@ Button log;
             public void onClick(View view) {
                 /*Intent in=new Intent(getApplicationContext(),HomePage.class);
                 startActivity(in);*/
-                setContentView(R.layout.homepage);
+                setContentView(R.layout.doctor);
             }
         });
 

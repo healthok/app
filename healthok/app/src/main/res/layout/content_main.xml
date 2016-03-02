@@ -62,22 +62,29 @@
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:text="OR SIGN IN WITH"
+        android:textSize="15dp"
         android:id="@+id/textView"
         android:layout_below="@+id/signin"
         android:layout_centerHorizontal="true" />
+<LinearLayout
+    android:layout_height="60dp"
+    android:layout_width="match_parent"
+    android:layout_marginTop="395dp"
+    android:layout_marginLeft="90dp">
 
     <ImageView
-        android:layout_width="55dp"
-        android:layout_height="57dp"
+        android:layout_width="50dp"
+        android:layout_height="45dp"
         android:id="@+id/imageView2"
         android:background="@drawable/facebook"
-        android:layout_below="@+id/textView"
+        android:layout_alignTop="@+id/imageView3"
         android:layout_toLeftOf="@+id/textView"
-        android:layout_toStartOf="@+id/textView" />
+        android:layout_toStartOf="@+id/textView"
+        />
 
     <ImageView
-        android:layout_width="55dp"
-        android:layout_height="50dp"
+        android:layout_width="45dp"
+        android:layout_height="40dp"
         android:id="@+id/imageView3"
         android:background="@drawable/googleplus"
         android:layout_alignBottom="@+id/imageView5"
@@ -86,19 +93,21 @@
 
 
     <ImageView
-        android:layout_width="58dp"
-        android:layout_height="57dp"
+        android:layout_width="50dp"
+        android:layout_height="45dp"
         android:id="@+id/imageView5"
         android:background="@drawable/twitter"
         android:layout_below="@+id/textView"
         android:layout_toRightOf="@+id/textView"
         android:layout_toEndOf="@+id/textView" />
+</LinearLayout>
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:text="I Forgot Password "
+        android:textSize="14dp"
         android:textColor="#ffffff"
         android:id="@+id/textView19"
         android:layout_alignTop="@+id/textView20"
@@ -111,6 +120,7 @@
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:text="Create New Account"
         android:textColor="#ffffff"
+        android:textSize="14dp"
         android:id="@+id/textView20"
         android:layout_alignParentBottom="true"
         android:layout_alignRight="@+id/imageView"

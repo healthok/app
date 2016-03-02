@@ -48,13 +48,12 @@ Button log;
         super.onCreate(savedInstanceState);
         setContentView(R.layout.content_main);
         TextView textview=(TextView)findViewById(R.id.textView20);
-        textview.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent in = new Intent(getApplicationContext(), Registration.class);
-                startActivity(in);
-            }
-        });
+       textview.setOnClickListener(new View.OnClickListener() {
+           @Override
+           public void onClick(View view) {
+              setContentView(R.layout.medicine1);
+           }
+       });
         log=(Button)findViewById(R.id.signin);
         log.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -64,8 +63,8 @@ Button log;
                 setContentView(R.layout.homepage);
             }
         });
+        }
 
-    }
     public void gotoprofile(View view)
     {
         uname=(EditText)findViewById(R.id.uname);

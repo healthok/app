@@ -35,7 +35,9 @@ public class HomePage extends Activity {
         b.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                setContentView(R.layout.medicine1);
+                Intent in=new Intent(getApplicationContext(),Medicine.class);
+                startActivity(in);
+
             }
         });
 

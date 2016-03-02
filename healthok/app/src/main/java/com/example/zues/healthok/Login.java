@@ -47,28 +47,22 @@ Button log;
     {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.content_main);
-        TextView textview=(TextView)findViewById(R.id.textView20);
-       textview.setOnClickListener(new View.OnClickListener() {
-           @Override
-           public void onClick(View view) {
-              setContentView(R.layout.medicine1);
-           }
-       });
-        log=(Button)findViewById(R.id.signin);
+
+       /* log=(Button)findViewById(R.id.signin);
         log.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                /*Intent in=new Intent(getApplicationContext(),HomePage.class);
-                startActivity(in);*/
-                setContentView(R.layout.homepage);
+                Intent in=new Intent(getApplicationContext(),HomePage.class);
+                startActivity(in);
+
             }
         });
-        }
+        }*/}
 
     public void gotoprofile(View view)
     {
         uname=(EditText)findViewById(R.id.uname);
-        pass=(EditText)findViewById(R.id.password);
+        pass=(EditText)findViewById(R.id.pswd);
         username=uname.getText().toString();
         password=pass.getText().toString();
         session = new SessionManager(getApplicationContext());
@@ -80,6 +74,10 @@ Button log;
 
     public  void gotosignup(View view)
     {
+
+
+
+
         Intent intent=new Intent(Login.this,Signup.class);
         startActivity(intent);
 
@@ -108,8 +106,9 @@ Button log;
         // Making a request to url and getting response
         // buid name value pair
         List<NameValuePair> params = new ArrayList<>(2);
-        params.add(new BasicNameValuePair("email", "len.2706@gmail.com"));
+        params.add(new BasicNameValuePair("email", "len.7206@gmail.com"));
         params.add(new BasicNameValuePair("password", "123456"));
+        jsonStr=sh.makeServiceCall(url, ServiceHandler.POST,params);
 
 //jsonStr = "not called";
         Log.d("Response: ", "> " + jsonStr);
@@ -134,10 +133,10 @@ Button log;
         // Dismiss the progress dialog
         if (pDialog.isShowing())
             pDialog.dismiss();
-        if(status.equals("5"))
+        if(status.equals("-1"))
         {
             session.createLoginSession(username);
-            Intent intent=new Intent(Login.this,HomePage.class);
+            Intent intent=new Intent(getApplicationContext(),HomePage.class);
             startActivity(intent);
         }
         else

@@ -13,8 +13,11 @@ import org.apache.http.client.entity.UrlEncodedFormEntity;
 import org.apache.http.client.methods.HttpGet;
 import org.apache.http.client.methods.HttpPost;
 import org.apache.http.client.utils.URLEncodedUtils;
+import org.apache.http.entity.StringEntity;
 import org.apache.http.impl.client.DefaultHttpClient;
 import org.apache.http.util.EntityUtils;
+import org.json.JSONObject;
+import org.json.JSONStringer;
 
 public class ServiceHandler {
 
@@ -58,8 +61,18 @@ String fullURL = urlbase+urls;
             if (method == POST) {
                 HttpPost httpPost = new HttpPost(fullURL);
                 // adding post params
+
                 if (params != null) {
-                    httpPost.setEntity(new UrlEncodedFormEntity(params));
+                    httpPost.setHeader("Content-Type", "application/json");
+                    JSONObject obj =new JSONObject();
+
+                    //StringEntity param = new StringEntity("json=" + obj.toString());
+
+
+
+
+
+
                 }
 
                 httpResponse = httpClient.execute(httpPost);
@@ -68,7 +81,7 @@ String fullURL = urlbase+urls;
                 // appending params to url
                 if (params != null) {
                     String paramString = URLEncodedUtils
-                            .format(params, "utf-8");
+                            .format(params, "UTF-8");
                     fullURL += "?" + paramString;
                 }
                 HttpGet httpGet = new HttpGet(fullURL);

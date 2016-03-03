@@ -106,6 +106,9 @@ public class Login extends Activity
             params.add(new BasicNameValuePair("password", "123456"));
             jsonStr=sh.makeServiceCall(url, ServiceHandler.POST,params);
 
+
+
+//jsonStr=sh.makeServiceCall("medicineorder/1",ServiceHandler.GET);
 //jsonStr = "not called";
             Log.d("Response: ", "> " + jsonStr);
 

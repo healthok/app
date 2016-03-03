@@ -36,7 +36,7 @@ Button log;
     SessionManager session;
 
     // URL to get contacts JSON
-    private static String url="EmailRegister/access";
+    private static String url="EmailRegister/Check";
 
     String status="-1";
     String jsonStr;
@@ -66,7 +66,7 @@ Button log;
         username=uname.getText().toString();
         password=pass.getText().toString();
         session = new SessionManager(getApplicationContext());
-        url="url"+username+"/"+password;
+//        url="url"+username+"/"+password;
         new GetContacts().execute();
 
     }
@@ -74,11 +74,7 @@ Button log;
 
     public  void gotosignup(View view)
     {
-
-
-
-
-        Intent intent=new Intent(Login.this,Signup.class);
+        Intent intent=new Intent(getApplicationContext(),Signup.class);
         startActivity(intent);
 
     }
@@ -116,7 +112,7 @@ Button log;
         if (jsonStr != null) {
             try {
                 result = new JSONObject(jsonStr);
-                status = result.getString("status");
+                status = result.getString(jsonStr);
             } catch (JSONException e) {
                 e.printStackTrace();
             }
@@ -135,13 +131,14 @@ Button log;
             pDialog.dismiss();
         if(status.equals("-1"))
         {
-            session.createLoginSession(username);
-            Intent intent=new Intent(getApplicationContext(),HomePage.class);
-            startActivity(intent);
+            Toast.makeText(getApplicationContext(), "WRONG PASSWORD", Toast.LENGTH_LONG).show();
         }
         else
         {
-            Toast.makeText(getApplicationContext(), "WRONG PASSWORD", Toast.LENGTH_LONG).show();
+
+            session.createLoginSession(username);
+            Intent intent=new Intent(getApplicationContext(),HomePage.class);
+            startActivity(intent);
         }
 
     }

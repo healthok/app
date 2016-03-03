@@ -65,4 +65,15 @@
             android:text="Call us"
             android:id="@+id/textView21" />
     </LinearLayout>
+
+    <Button
+        android:layout_width="310dp"
+        android:layout_height="46dp"
+        android:text="SUBMIT"
+        android:id="@+id/button3"
+        android:background="#B1BC39"
+        android:textColor="#FFFFFF"
+        android:layout_marginTop="50dp"
+        android:layout_marginLeft="5dp"
+        android:layout_gravity="center_horizontal" />
 </LinearLayout>

@@ -16,6 +16,7 @@ import org.apache.http.client.utils.URLEncodedUtils;
 import org.apache.http.entity.StringEntity;
 import org.apache.http.impl.client.DefaultHttpClient;
 import org.apache.http.util.EntityUtils;
+import org.json.JSONException;
 import org.json.JSONObject;
 import org.json.JSONStringer;
 
@@ -66,16 +67,18 @@ String fullURL = urlbase+urls;
                     httpPost.setHeader("Content-Type", "application/json");
                     JSONObject obj =new JSONObject();
 
-                    //StringEntity param = new StringEntity("json=" + obj.toString());
+                    for ( NameValuePair nameValuePair : params) {
+                        obj.put(nameValuePair.getName(), nameValuePair.getValue());
+
+                    }
+
+                    StringEntity param = new StringEntity(obj.toString());
+
+                    httpPost.setEntity(param);
 
 
-
-
-
-
+                    httpResponse = httpClient.execute(httpPost);
                 }
-
-                httpResponse = httpClient.execute(httpPost);
 
             } else if (method == GET) {
                 // appending params to url
@@ -97,6 +100,9 @@ String fullURL = urlbase+urls;
         } catch (ClientProtocolException e) {
             e.printStackTrace();
         } catch (IOException e) {
+            e.printStackTrace();
+        }
+        catch (JSONException e) {
             e.printStackTrace();
         }
 

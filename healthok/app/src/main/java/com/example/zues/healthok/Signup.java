@@ -47,8 +47,8 @@ public class Signup extends Activity
     public void onCreate(Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.registration);
-        ActionBar actionBar=getActionBar();
+        setContentView(R.layout.activity_signup);
+       /* ActionBar actionBar=getActionBar();
         actionBar.setBackgroundDrawable(new ColorDrawable(Color.rgb(24,178,244)));
         Typeface cg=Typeface.createFromAsset(getAssets(),"centurygothic.ttf");
         EditText uname=(EditText)findViewById(R.id.uname);
@@ -56,7 +56,7 @@ public class Signup extends Activity
         Button signin=(Button)findViewById(R.id.signin);
         signin.setTypeface(cg);
         uname.setTypeface(cg);
-        pswd.setTypeface(cg);
+        pswd.setTypeface(cg);*/
     }
     public void register(View view)
     {
@@ -70,7 +70,7 @@ public class Signup extends Activity
         email=mail.getText().toString();
         password=pass.getText().toString();
         phone=pnum.getText().toString();
-        url="signup/"+firstname+"/"+lastname+"/"+email+"/"+password+"/"+phone;
+       // url="signup/"+firstname+"/"+lastname+"/"+email+"/"+password+"/"+phone;
                 new Register().execute();
     }
 
@@ -96,7 +96,7 @@ public class Signup extends Activity
             ServiceHandler sh = new ServiceHandler();
 
             // Making a request to url and getting response
-            String jsonStr = sh.makeServiceCall(url, ServiceHandler.GET);
+            String jsonStr = sh.makeServiceCall(url, ServiceHandler.POST);
 
             Log.d("Response: ", "> " + jsonStr);
 

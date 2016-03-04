@@ -34,6 +34,7 @@ public class Login extends Activity
     String password;
     Button log;
     SessionManager session;
+    TextView textview;
 
     // URL to get contacts JSON
     private static String url="EmailRegister/Check";
@@ -48,16 +49,16 @@ public class Login extends Activity
         super.onCreate(savedInstanceState);
         setContentView(R.layout.content_main);
 
-       /* log=(Button)findViewById(R.id.signin);
-        log.setOnClickListener(new View.OnClickListener() {
+        /*textview=(TextView)findViewById(R.id.textView20);
+        textview.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent in=new Intent(getApplicationContext(),HomePage.class);
+                Intent in = new Intent(getApplicationContext(), Signup.class);
                 startActivity(in);
 
             }
-        });
-        }*/}
+        });*/
+        }
 
     public void gotoprofile(View view)
     {

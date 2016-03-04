@@ -38,7 +38,7 @@ public class Login extends Activity
     // URL to get contacts JSON
     private static String url="EmailRegister/Check";
 
-    String status="-1";
+    String status="-5";
     String jsonStr;
     // contacts JSONArray
     JSONObject result = null;
@@ -115,7 +115,7 @@ public class Login extends Activity
             if (jsonStr != null) {
                 try {
                     result = new JSONObject(jsonStr);
-                    status = result.getString(jsonStr);
+                    status = result.getString("status");
                 } catch (JSONException e) {
                     e.printStackTrace();
                 }

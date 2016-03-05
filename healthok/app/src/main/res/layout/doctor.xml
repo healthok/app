@@ -41,22 +41,22 @@
 
 
         <ImageView
-            android:layout_width="60dp"
-            android:layout_height="60dp"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
             android:id="@+id/imageView15"
-            android:layout_marginLeft="30dp"
+            android:layout_marginLeft="38dp"
             android:background="@drawable/general"/>
 
         <ImageView
-            android:layout_width="60dp"
-            android:layout_height="60dp"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
             android:id="@+id/imageView16"
             android:layout_marginLeft="70dp"
             android:background="@drawable/ayur"/>
 
         <ImageView
-            android:layout_width="60dp"
-            android:layout_height="60dp"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
             android:id="@+id/imageView17"
             android:layout_marginLeft="60dp"
             android:background="@drawable/cardiologist"/>
@@ -65,10 +65,11 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="General Physician    Ayurveda          Cardiologist"
+        android:text="General Physician    Ayurveda     Cardiologist"
         android:id="@+id/textView15"
-        android:textSize="17dp"
-        android:layout_marginLeft="5dp"/>
+        android:textSize="18dp"
+        android:layout_marginLeft="5dp"
+         />
 
     <LinearLayout
         android:orientation="horizontal"
@@ -78,22 +79,22 @@
         >
 
         <ImageView
-            android:layout_width="60dp"
-            android:layout_height="60dp"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
             android:id="@+id/imageView25"
-            android:layout_marginLeft="30dp"
+            android:layout_marginLeft="38dp"
             android:background="@drawable/ped"/>
 
         <ImageView
-            android:layout_width="60dp"
-            android:layout_height="60dp"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
             android:id="@+id/imageView26"
             android:layout_marginLeft="70dp"
             android:background="@drawable/dentist"/>
 
         <ImageView
-            android:layout_width="60dp"
-            android:layout_height="60dp"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
             android:id="@+id/imageView27"
             android:layout_marginLeft="60dp"
             android:background="@drawable/psy"/>
@@ -102,9 +103,10 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="   Pediatrician              Dentist            Psychiatrist"
+        android:text="   Pediatrician          Dentist          Psychiatrist"
         android:id="@+id/textView16"
-        android:textSize="17dp"
+        android:textSize="18dp"
+
         android:layout_marginLeft="5dp"/>
 
     <LinearLayout
@@ -114,22 +116,22 @@
         android:layout_marginTop="30dp">
 
         <ImageView
-            android:layout_width="60dp"
-            android:layout_height="60dp"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
             android:id="@+id/imageView28"
-            android:layout_marginLeft="30dp"
+            android:layout_marginLeft="38dp"
             android:background="@drawable/neu"/>
 
         <ImageView
-            android:layout_width="60dp"
-            android:layout_height="60dp"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
             android:id="@+id/imageView29"
             android:layout_marginLeft="80dp"
             android:background="@drawable/ortho"/>
 
         <ImageView
-            android:layout_width="60dp"
-            android:layout_height="60dp"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
             android:id="@+id/imageView30"
             android:layout_marginLeft="60dp"
             android:background="@drawable/optha"/>
@@ -138,10 +140,10 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="    Neurologist            Orthopedist     Ophthamologist"
+        android:text="    Neurologist       Orthopedist   Ophthamologist"
         android:id="@+id/textView17"
-        android:textSize="17dp
-        "/>
+        android:textSize="18dp"
+        />
 
 
 </LinearLayout>

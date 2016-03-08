@@ -24,22 +24,26 @@ import android.widget.Toast;
 import com.example.zues.healthok.util.ServiceHandler;
 
 import java.lang.String;
+
+import org.apache.http.NameValuePair;
+import org.apache.http.message.BasicNameValuePair;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 
 public class Signup extends Activity
 {
     private ProgressDialog pDialog;
 
     EditText fname,lname,mail,pass,pnum;
-    String firstname,lastname,email,password,phone;
+    String firstName,lastName,email,password,phone;
 
-    private static String url="http://app-myhealthok.rhcloud.com/healthokapp/rest/EmailRegister/access";
-    String status;
+    private static String url="EmailRegistration/access";
+    String status="-5";
 
     JSONObject result = null;
 
@@ -65,8 +69,8 @@ public class Signup extends Activity
         mail=(EditText)findViewById(R.id.email);
         pass=(EditText)findViewById(R.id.password);
         pnum=(EditText)findViewById(R.id.phone);
-        firstname=fname.getText().toString();
-        lastname=lname.getText().toString();
+        firstName=fname.getText().toString();
+        lastName=lname.getText().toString();
         email=mail.getText().toString();
         password=pass.getText().toString();
         phone=pnum.getText().toString();
@@ -96,7 +100,15 @@ public class Signup extends Activity
             ServiceHandler sh = new ServiceHandler();
 
             // Making a request to url and getting response
-            String jsonStr = sh.makeServiceCall(url, ServiceHandler.POST);
+            //NameValuePair values code
+            List<NameValuePair> params = new ArrayList<>(5);
+            params.add(new BasicNameValuePair("firstName", "A"));
+            params.add(new BasicNameValuePair("lastName", "a"));
+            params.add(new BasicNameValuePair("email", "a"));
+            params.add(new BasicNameValuePair("password", "a"));
+            params.add(new BasicNameValuePair("phone", "a123"));
+
+            String jsonStr = sh.makeServiceCall(url, ServiceHandler.POST,params);
 
             Log.d("Response: ", "> " + jsonStr);
 

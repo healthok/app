@@ -1,0 +1,160 @@
+
+   .content-wrapper {
+    margin-left: 110px;
+    padding-top: 55px;
+  }
+   .content-wrapper h1 {
+    padding: 4em 0;
+    font-size: 3.2rem;
+    font-weight: 300;
+  }
+@media only screen and (min-width: 1170px) {
+   .content-wrapper {
+    margin-left: 200px;
+  }
+  .cd-main-content::before {
+    content: 'desktop';
+  }
+}
+
+@media only screen and (max-width: 500px) {
+    .navbar{
+		padding-bottom:30px;
+		
+	}
+	nav{
+	height:100px;
+	transition:all 0.1s;
+	}
+}
+@media only screen and (min-width: 501px) {
+    .navbar{
+		max-height:70px;
+	}
+	nav{
+	height:100px;
+	transition:all 1s;
+	transition-delay:1s;
+	
+}
+}
+body{
+	background-size:     contain;                      /* <------ */
+    background-repeat:no-repeat;
+    background-position: top;
+}
+#flabel {
+	font-size:xx-large;	
+	background:rgba(36,221,255,0.5);
+	
+	color:#ebf0f0;
+	text-align:center;
+	z-index:8px;	
+}
+#blabel {
+	font-size:xx-large;	
+	background:rgba(36,221,255,0.5);
+	
+	color:#ebf0f0;
+	text-align:center;	
+}
+#li{
+	background-color:red;
+	
+	
+}
+.container > ul > li {
+	margin-right:20px;
+	margin-left:20px;
+	overflow:hidden;
+	margin-bottom:20px;
+	font-size:xx-large;
+	color:#ebf0f0;
+	list-style:none;
+	text-align:center;
+	width:inherit;
+	height:auto;
+	background:rgba(36,221,255,0.5);	
+}
+.navbar-default .navbar-nav > li > a {
+	color:#158daf;
+}
+.navbar{ 
+	border-radius:0px;
+	}
+.navbar-default{
+	background-color:#ebf0f0;
+	}
+	height:50px;
+}	
+.sticky{
+	height:80px;
+	
+	
+}
+.mbar{
+	height:310px;
+}
+img.logo{
+	
+	transition:all 2s;
+	transition-delay:1s;
+}
+.imgstick{
+	
+	padding-left:20px;
+}
+.imgif{
+	 transition-delay:.6s;
+	visibility:hidden; 
+	}
+.imgifg{transition-delay:1.5s;
+	visibility:visible; 
+}
+nav{
+	height:100px;
+	
+	
+}
+#srch{
+	background-color:#24ddff;	
+}
+.box{
+  width: 300px;
+  height: 50px;
+  
+}
+.container-1{
+  width: 300px;
+  vertical-align: middle;
+  white-space: nowrap;
+  position: relative;
+}
+.container-1 input#search{
+  width: 300px;
+  height: 40px;
+  background: white;
+  border: none;
+  font-size: 10pt;
+  float: left;
+  color: #63717f;
+  padding-left: 45px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+}
+.container-1 input#search::-webkit-input-placeholder {
+   color: #CED5D5;
+}
+ 
+.container-1 input#search:-moz-placeholder { /* Firefox 18- */
+   color: #CED5D5; 
+}
+ 
+.container-1 input#search::-moz-placeholder {  /* Firefox 19+ */
+   color: #CED5D5; 
+}
+ 
+.container-1 input#search:-ms-input-placeholder { 
+   color: #CED5D5; 
+}

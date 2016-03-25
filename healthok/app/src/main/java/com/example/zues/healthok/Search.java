@@ -92,7 +92,7 @@ public class Search extends Activity {
 
         session = new SessionManager(getApplicationContext());
         HashMap<String, String> user = session.getUserDetails();
-        String username = user.get(SessionManager.KEY_NAME);
+        String username = user.get(SessionManager.KEY_USERNAME);
 
         customer=(TextView)findViewById(R.id.display);
         customer.setText("Hello: "+username);
@@ -149,7 +149,7 @@ public class Search extends Activity {
     public void addToCart(View view)
     {
         HashMap<String, String> user = session.getUserDetails();
-        String username = user.get(SessionManager.KEY_NAME);
+        String username = user.get(SessionManager.KEY_USERNAME);
 
         final String quantity=quant.getText().toString();
           q=Integer.parseInt(quantity);

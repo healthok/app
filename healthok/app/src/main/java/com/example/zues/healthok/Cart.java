@@ -53,7 +53,7 @@ public class Cart extends ActionBarActivity {
         setContentView(R.layout.activity_cart);
         session = new SessionManager(getApplicationContext());
         HashMap<String, String> user = session.getUserDetails();
-        String username = user.get(SessionManager.KEY_NAME);
+        String username = user.get(SessionManager.KEY_USERNAME);
 
         lv = (ListView) findViewById(R.id.cartitems);
         amounttv = (TextView) findViewById(R.id.amount);

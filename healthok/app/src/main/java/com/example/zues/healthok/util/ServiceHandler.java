@@ -26,7 +26,7 @@ public class ServiceHandler {
     public final static int GET = 1;
     public final static int POST = 2;
 
-    public static String urlbase = "http://app-myhealthok.rhcloud.com/healthokapp/rest/";
+    public static String urlbase = ServiceURL.Base;
 
     public ServiceHandler() {
 
@@ -49,9 +49,9 @@ public class ServiceHandler {
      * @method - http request method
      * @params - http request params
      */
-    public String makeServiceCall(String urls, int method,
+    public String makeServiceCall(String url, int method,
                                   List<NameValuePair> params) {
-String fullURL = urlbase+urls;
+String fullURL = urlbase+url;
         try {
             // http client
             DefaultHttpClient httpClient = new DefaultHttpClient();

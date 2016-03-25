@@ -41,7 +41,7 @@ public class OrderPlace extends ActionBarActivity {
         setContentView(R.layout.activity_order_place);
         session = new SessionManager(getApplicationContext());
         HashMap<String, String> user = session.getUserDetails();
-        username = user.get(SessionManager.KEY_NAME);
+        username = user.get(SessionManager.KEY_USERNAME);
 
         add1tv=(TextView)findViewById(R.id.addLine1);
         add2tv=(TextView)findViewById(R.id.addLine2);

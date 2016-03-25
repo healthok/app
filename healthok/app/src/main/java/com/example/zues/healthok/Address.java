@@ -46,7 +46,7 @@ public class Address extends ActionBarActivity
     {
         session = new SessionManager(getApplicationContext());
         HashMap<String, String> user = session.getUserDetails();
-        String username = user.get(SessionManager.KEY_NAME);
+        String username = user.get(SessionManager.KEY_USERNAME);
 
         housetxt=(EditText)findViewById(R.id.house);
         streettxt=(EditText)findViewById(R.id.street);

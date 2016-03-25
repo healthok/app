@@ -9,6 +9,9 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.SharedPreferences.Editor;
+import android.util.Log;
+
+import com.example.zues.healthok.model.User;
 
 public class SessionManager {
     // Shared Preferences
@@ -30,10 +33,24 @@ public class SessionManager {
     private static final String IS_LOGIN = "IsLoggedIn";
 
     // User name (make variable public to access from outside)
-    public static final String KEY_NAME = "name";
+    public static final String KEY_USERNAME = "username";
 
     // Email address (make variable public to access from outside)
     public static final String KEY_EMAIL = "email";
+
+    public static final String KEY_USERID = "userId";
+
+    public static final String KEY_FIRSTNAME = "firstName";
+
+    public static final String KEY_LASTNAME = "lastName";
+
+    public static final String KEY_MOBILE = "mobile";
+
+    public static final String KEY_PASSWORD = "password";
+
+    public static final String KEY_SENT_TOKEN_TO_SERVER = "sentTokenToServer";
+
+    public static final String KEY_GCM_TOKEN = "gcmToken";
 
     // Constructor
     public SessionManager(Context context){
@@ -45,18 +62,35 @@ public class SessionManager {
     /**
      * Create login session
      * */
-    public void createLoginSession(String name){
+    public void createLoginSession(String userName){
         // Storing login value as TRUE
         editor.putBoolean(IS_LOGIN, true);
 
         // Storing name in pref
-        editor.putString(KEY_NAME, name);
+        editor.putString(KEY_USERNAME, userName);
 
 
         // commit changes
         editor.commit();
     }
 
+
+    public void createLoginSession(User user){
+        // Storing login value as TRUE
+        editor.putBoolean(IS_LOGIN, true);
+
+        // Storing name in pref
+        editor.putString(KEY_FIRSTNAME, user.getFirstName());
+        editor.putString(KEY_LASTNAME, user.getLastName());
+        editor.putString(KEY_MOBILE, user.getMobile());
+        editor.putString(KEY_EMAIL, user.getEmail());
+        editor.putString(KEY_PASSWORD, user.getPassword());
+        editor.putInt(KEY_USERID, user.getUserid());
+
+
+        // commit changes
+        editor.commit();
+    }
     /**
      * Check login method wil check user login status
      * If false it will redirect user to login page
@@ -87,11 +121,29 @@ public class SessionManager {
     public HashMap<String, String> getUserDetails(){
         HashMap<String, String> user = new HashMap<String, String>();
         // user name
-        user.put(KEY_NAME, pref.getString(KEY_NAME, null));
+       // user.put(KEY_NAME, pref.getString(KEY_NAME, null));
 
+        Log.e("SESSIONMANAGER", "Invalid call to getUserDetails");
 
         // return user
         return user;
+    }
+
+    public User getUser()
+    {
+        User user = new User
+                ( pref.getInt(KEY_USERID,-1)
+                        ,pref.getString(KEY_FIRSTNAME,null)
+                        ,pref.getString(KEY_LASTNAME,null)
+                        ,pref.getString(KEY_EMAIL,null)
+                        ,pref.getString(KEY_MOBILE,null)
+                        ,pref.getString(KEY_PASSWORD,null)
+                );
+
+        return user;
+
+
+
     }
 
     /**
@@ -121,4 +173,32 @@ public class SessionManager {
     public boolean isLoggedIn(){
         return pref.getBoolean(IS_LOGIN, false);
     }
+
+    public String getGCMToken()
+    {
+        return pref.getString(KEY_GCM_TOKEN, null);
+
+    }
+
+    public void setGCMToken(String token)
+    {
+       editor.putString(KEY_GCM_TOKEN, token);
+        editor.apply();
+
+    }
+
+
+    public boolean getSentTokenToServer()
+    {
+        return pref.getBoolean(KEY_SENT_TOKEN_TO_SERVER, false);
+
+    }
+
+    public void setSentTokenToServer(boolean sent)
+    {
+        editor.putBoolean(KEY_SENT_TOKEN_TO_SERVER, sent);
+        editor.apply();
+
+    }
+
 }

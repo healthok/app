@@ -82,7 +82,7 @@ public class CartCustomAdapter extends BaseAdapter {
         session=new SessionManager(context);
 
         HashMap<String, String> user = session.getUserDetails();
-        String username = user.get(SessionManager.KEY_NAME);
+        String username = user.get(SessionManager.KEY_USERNAME);
 
         holder.deletebtn.setOnClickListener(new View.OnClickListener() {
             @Override

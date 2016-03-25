@@ -3,6 +3,7 @@ package com.example.zues.healthok.service;
 /**
  * Created by Abhay-Jaiswal on 3/18/2016.
  */
+import android.app.Notification;
 import android.app.NotificationManager;
 import android.app.PendingIntent;
 import android.content.Context;
@@ -54,7 +55,7 @@ public class MyGcmListenerService extends GcmListenerService {
          * In some cases it may be useful to show a notification indicating to the user
          * that a message was received.
          */
-        sendNotification(from, message);
+        sendNotification("HealthOk", message);
         // [END_EXCLUDE]
     }
     // [END receive_message]
@@ -68,8 +69,12 @@ public class MyGcmListenerService extends GcmListenerService {
     private void sendNotification(String title, String body) {
         Context context = getBaseContext();
         NotificationCompat.Builder mBuilder = new NotificationCompat.Builder(context)
-                .setSmallIcon(R.mipmap.ic_launcher).setContentTitle(title)
-                .setContentText(body);
+                .setSmallIcon(R.mipmap.ic_launcher)
+                .setContentTitle(title)
+                .setContentText(body)
+                .setDefaults(Notification.DEFAULT_SOUND)
+                .setAutoCancel(true)
+                ;
         NotificationManager mNotificationManager = (NotificationManager) context
                 .getSystemService(Context.NOTIFICATION_SERVICE);
         mNotificationManager.notify(MESSAGE_NOTIFICATION_ID, mBuilder.build());

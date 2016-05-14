@@ -1,9 +1,12 @@
 package com.example.zues.healthok;
 
+import android.app.ActionBar;
 import android.app.Activity;
 import android.app.SearchManager;
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -18,10 +21,14 @@ import android.widget.SearchView;
 public class HomePage extends Activity {
 
 
+
     Button b;
     ImageView im;
     public void onCreate(Bundle savedInstanceState)
     {
+
+        ActionBar actionBar = getActionBar();
+        actionBar.setBackgroundDrawable(new ColorDrawable(Color.LTGRAY));
         super.onCreate(savedInstanceState);
         setContentView(R.layout.homepage);
         im=(ImageView)findViewById(R.id.imageView12);
@@ -50,12 +57,14 @@ public class HomePage extends Activity {
         MenuInflater inflater = getMenuInflater();
         inflater.inflate(R.menu.menu_home_page, menu);
 
-        // Associate searchable configuration with the SearchView
-        SearchManager searchManager =
-                                (SearchManager) getSystemService(Context.SEARCH_SERVICE);
-        SearchView searchView =
-                         (SearchView) menu.findItem(R.id.search).getActionView();
+
+        //associate searchable confugration with searchview
+
+        SearchManager searchManager= (SearchManager) getSystemService(Context.SEARCH_SERVICE);
+        SearchView searchView = (SearchView) menu.findItem(R.id.search).getActionView();
         searchView.setSearchableInfo(searchManager.getSearchableInfo(getComponentName()));
-        return super.onCreateOptionsMenu(menu);
+
+
+        return true;
     }
 }

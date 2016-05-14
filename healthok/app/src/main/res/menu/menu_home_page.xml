@@ -9,19 +9,17 @@
           android:orderInCategory="100"
           app:showAsAction="collapseActionView|never"/>
 
-    <item android:id="@+id/action_example"
-        android:title="@string/action_example"
-        app:showAsAction="withText|never" />
+
 
     <!-- Refresh -->
     <item android:id="@+id/action_refresh"
         android:title="@string/action_refresh"
-        app:showAsAction="ifRoom" />
+        app:showAsAction="always" />
 
     <!-- Help -->
     <item android:id="@+id/action_help"
         android:title="@string/help"
-        app:showAsAction="never"/>
+        app:showAsAction="always"/>
 
     <!-- Check updates -->
     <item android:id="@+id/action_check_updates"

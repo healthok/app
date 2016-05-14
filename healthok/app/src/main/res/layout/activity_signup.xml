@@ -7,12 +7,15 @@
     tools:context="com.example.zues.healthok.Signup"
     >
 <TextView
-    android:layout_marginLeft="100dp"
     android:layout_width="fill_parent"
     android:layout_height="50dp"
     android:textSize="30dp"
-    android:text="Signup"
-    android:id="@+id/textView" />
+    android:text="   Signup"
+    android:textAlignment="center"
+    android:id="@+id/textView"
+    android:layout_alignParentTop="true"
+    android:layout_alignLeft="@+id/button9"
+    android:layout_alignStart="@+id/button9" />
 
     <EditText
         android:layout_marginTop="40dp"
@@ -58,12 +61,17 @@
         android:layout_marginTop="15dp"
        />
 <Button
-    android:layout_width="fill_parent"
+    style="?android:attr/buttonStyleSmall"
+    android:layout_width="wrap_content"
     android:layout_height="50dp"
     android:text="Create account"
     android:layout_below="@+id/phone"
-    android:layout_marginTop="30dp"
+    android:layout_marginTop="50dp"
     android:clickable="true"
-    android:onClick="register"/>
+    android:onClick="register"
+    android:layout_centerHorizontal="true"
+    android:id="@+id/button9" />
+
+
 
 </RelativeLayout>

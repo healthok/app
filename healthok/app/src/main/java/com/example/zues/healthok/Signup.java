@@ -83,10 +83,13 @@ public class Signup extends Activity
 
         @Override
         protected void onPreExecute() {
-            super.onPreExecute();
+            //super.onPreExecute();
             // Showing progress dialog
             pDialog = new ProgressDialog(Signup.this);
-            pDialog.setMessage("Please wait...");
+            pDialog.setMessage("Creating Account... ");
+           // pDialog.setMax(16);
+            pDialog.setProgressStyle(ProgressDialog.STYLE_SPINNER);
+
             pDialog.setCancelable(false);
             pDialog.show();
 
@@ -102,11 +105,11 @@ public class Signup extends Activity
             // Making a request to url and getting response
             //NameValuePair values code
             List<NameValuePair> params = new ArrayList<>(5);
-            params.add(new BasicNameValuePair("firstName", "A"));
-            params.add(new BasicNameValuePair("lastName", "a"));
-            params.add(new BasicNameValuePair("email", "a"));
-            params.add(new BasicNameValuePair("password", "a"));
-            params.add(new BasicNameValuePair("phone", "a123"));
+            params.add(new BasicNameValuePair("firstName",firstName));
+            params.add(new BasicNameValuePair("lastName",lastName));
+            params.add(new BasicNameValuePair("email",email));
+            params.add(new BasicNameValuePair("password",password));
+            params.add(new BasicNameValuePair("phone",phone));
 
             String jsonStr = sh.makeServiceCall(url, ServiceHandler.POST,params);
 
@@ -142,6 +145,7 @@ public class Signup extends Activity
             }
 
         }
+
 
     }
 

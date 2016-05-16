@@ -149,8 +149,9 @@
         android:textSize="28dp"
         android:textColor="#FFFFFF"
         android:layout_marginTop="50dp"
+
         android:layout_marginLeft="5dp"
-        android:background="#B1BC39"
-        android:id="@+id/button2" />
+        android:background="#58b40d" />
+
 
 </LinearLayout>

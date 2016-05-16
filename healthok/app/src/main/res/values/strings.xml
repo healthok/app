@@ -6,6 +6,13 @@
     <string name="title_activity_activity_register_user">activity_register_user</string>
     <string name="title_activity_search">Search</string>
     <string name="title_activity_profile">Profile</string>
+    <string name="action_refresh">Refresh</string>
+    <string name="help">Help</string>
+    <string name="update">Update</string>
+    <string name="search_hint">Search Here </string>
+    <string name="search_title">Search</string>
+
+
 
    <!--  <string name="gcm_defaultSenderId">846114174530</string> -->
 

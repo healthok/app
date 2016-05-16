@@ -9,7 +9,7 @@
         android:layout_width="316dp"
         android:layout_height="wrap_content"
         android:inputType="textPersonName"
-        android:text="Enter Your Name"
+        android:hint="Enter Your Name"
         android:layout_marginTop="30dp"
         android:ems="10"
         android:id="@+id/editText2"

@@ -15,7 +15,7 @@
         android:layout_width="60dp"
         android:layout_height="60dp"
         android:layout_marginLeft="10dp"
-        android:id="@+id/imageView6"
+        android:id="@+id/cameraButton"
         android:layout_marginTop="10dp"
         android:onClick=""
         android:background="@drawable/cameraicon"
@@ -53,7 +53,7 @@
             android:layout_width="60dp"
             android:layout_height="60dp"
             android:layout_marginLeft="10dp"
-            android:id="@+id/imageView31" />
+            android:id="@+id/uploaded_Image" />
     </LinearLayout>
 
     <LinearLayout
@@ -149,7 +149,7 @@
         android:textSize="28dp"
         android:textColor="#FFFFFF"
         android:layout_marginTop="50dp"
-
+        android:layout_marginLeft="5dp"
         android:background="#B1BC39"
         android:id="@+id/button2" />
 

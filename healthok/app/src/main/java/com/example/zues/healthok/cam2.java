@@ -1,15 +1,26 @@
 package com.example.zues.healthok;
 
 import android.app.Activity;
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
-import android.graphics.drawable.Drawable;
+import android.database.Cursor;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.net.Uri;
 import android.os.Bundle;
+import android.os.Environment;
 import android.provider.MediaStore;
+import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
 
+
 import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.OutputStream;
 
 
 /**
@@ -18,8 +29,8 @@ import java.io.File;
 public class cam2 extends Activity {
 
 
-    ImageView iv1;
-    ImageView iv;
+    ImageView camera_button;
+    ImageView viewimage;
     static final int CAM_REQUEST=1;
 
     @Override
@@ -27,39 +38,107 @@ public class cam2 extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.medicine1);
 
-        iv1=(ImageView) findViewById(R.id.imageView6);
-        iv=(ImageView) findViewById(R.id.imageView31);
-        iv1.setOnClickListener(new View.OnClickListener() {
-
+        camera_button=(ImageView) findViewById(R.id.cameraButton);
+        viewimage=(ImageView) findViewById(R.id.uploaded_Image);
+        camera_button.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v) {
-                Intent camera_intent= new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
-                File file=getFile();
-                camera_intent.putExtra(MediaStore.EXTRA_OUTPUT, Uri.fromFile(file));
-                startActivityForResult(camera_intent,CAM_REQUEST);
-
+            public void onClick(View V) {
+                selectImage();
             }
+
         });
 
     }
+    public void selectImage(){
+        final CharSequence[] options={"Take photo","Gallery","Cancel"};
+        AlertDialog.Builder builder=new AlertDialog.Builder(cam2.this);
+        builder.setTitle("Attach Priscription...!");
 
-    private File getFile(){
-        File folder=new File("sdcard/cam_app");
-        if(!folder.exists())
-        {
-            folder.mkdir();
-        }
+        builder.setItems(options, new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int item) {
+                if(options[item].equals("Take Photo")){
+                Intent intent=new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
 
-        File imagefile=new File(folder,"cam.jpg");
-        return imagefile;
+                    File file=new File(android.os.Environment.getExternalStorageDirectory(),"x.jpg");
+                    intent.putExtra(MediaStore.EXTRA_OUTPUT,Uri.fromFile(file));
+                    startActivityForResult(intent,CAM_REQUEST);
+                }
+                else if( options[item].equals("Gallery")){
+                 Intent intent=new Intent(Intent.ACTION_PICK,android.provider.MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
+                    startActivityForResult(intent, 2);
+                }
+
+                else if (options[item].equals("Cancel")) {
+                    dialog.dismiss();
+                }
+
+            }
+        });
+builder.show();
 
     }
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-        String path="sdcard/cam_app/x.jpg";
-        iv.setImageDrawable(Drawable.createFromPath(path));
+        super.onActivityResult(requestCode, resultCode, data);
+        if (resultCode == RESULT_OK) {
+            if (requestCode == 1) {
+                File f = new File(Environment.getExternalStorageDirectory().toString());
+                for (File temp : f.listFiles()) {
+                    if (temp.getName().equals("x.jpg")) {
+                        f = temp;
+                        break;
+                    }
+                }
+                try {
+                    Bitmap bitmap;
+                    BitmapFactory.Options bitmapOptions = new BitmapFactory.Options();
+
+                    bitmap = BitmapFactory.decodeFile(f.getAbsolutePath(),
+                            bitmapOptions);
+
+                    viewimage.setImageBitmap(bitmap);
+
+                    String path = android.os.Environment
+                            .getExternalStorageDirectory()
+                            + File.separator
+                            + "Phoenix" + File.separator + "default";
+                    f.delete();
+                    OutputStream outFile = null;
+                    File file = new File(path, String.valueOf(System.currentTimeMillis()) + ".jpg");
+                    try {
+                        outFile = new FileOutputStream(file);
+                        bitmap.compress(Bitmap.CompressFormat.JPEG, 85, outFile);
+                        outFile.flush();
+                        outFile.close();
+                    } catch (FileNotFoundException e) {
+                        e.printStackTrace();
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                    } catch (Exception e) {
+                        e.printStackTrace();
+                    }
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+            } else if (requestCode == 2) {
+
+                Uri selectedImage = data.getData();
+                String[] filePath = { MediaStore.Images.Media.DATA };
+                Cursor c = getContentResolver().query(selectedImage,filePath, null, null, null);
+                c.moveToFirst();
+                int columnIndex = c.getColumnIndex(filePath[0]);
+                String picturePath = c.getString(columnIndex);
+                c.close();
+                Bitmap thumbnail = (BitmapFactory.decodeFile(picturePath));
+                Log.w("path of image from gallery******************..", picturePath + "");
+                viewimage.setImageBitmap(thumbnail);
+            }
+        }
     }
+
+
 }
 
 

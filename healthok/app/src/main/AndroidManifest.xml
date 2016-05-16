@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.zues.healthok" >
+    package="com.example.zues.healthok">
+
 
     <uses-feature
         android:name="android.hardware.camera"
@@ -8,8 +9,9 @@
 
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.CALL_PHONE" />
-    <uses-feature android:name="android.hardware.camera2"/>
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-feature android:name="android.hardware.camera.autofocus" />
 
 
 
@@ -39,6 +41,7 @@
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name">
+
         <activity
             android:name=".Login"
             android:label="@string/app_name">
@@ -83,16 +86,6 @@
         </activity>
 
         <activity
-            android:name=".Medicine"
-            android:label="@string/app_name" >
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.DEFAULT" />
-            </intent-filter>
-        </activity>
-
-        <activity
             android:name=".Search"
             android:label="@string/title_activity_search" >
         </activity>
@@ -126,6 +119,11 @@
 
         <activity
             android:name=".cam2">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
         </activity>
 
 // gcm settings

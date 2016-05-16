@@ -31,7 +31,6 @@ public class cam2 extends Activity {
         iv=(ImageView) findViewById(R.id.imageView31);
         iv1.setOnClickListener(new View.OnClickListener() {
 
-
             @Override
             public void onClick(View v) {
                 Intent camera_intent= new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
@@ -58,7 +57,7 @@ public class cam2 extends Activity {
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-        String path="sdcard/cam_app/cam.jpg";
+        String path="sdcard/cam_app/x.jpg";
         iv.setImageDrawable(Drawable.createFromPath(path));
     }
 }

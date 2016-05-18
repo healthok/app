@@ -14,8 +14,6 @@ import android.provider.MediaStore;
 import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
-
-
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
@@ -137,6 +135,7 @@ builder.show();
             }
         }
     }
+
 
 
 }

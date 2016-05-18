@@ -24,6 +24,8 @@ public class HomePage extends Activity {
 
     Button b;
     ImageView im;
+    ImageView im1;
+    ImageView im2;
     public void onCreate(Bundle savedInstanceState)
     {
 
@@ -31,16 +33,37 @@ public class HomePage extends Activity {
         actionBar.setBackgroundDrawable(new ColorDrawable(Color.LTGRAY));
         super.onCreate(savedInstanceState);
         setContentView(R.layout.homepage);
-        im=(ImageView)findViewById(R.id.imageView12);
+        im=(ImageView)findViewById(R.id.medicine_button_homepage);
         im.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                /* Intent in=new Intent(HomePage.this,Medicine.class);
                 startActivity(in);*/
-                setContentView(R.layout.medicine1);
+                //setContentView(R.layout.medicine1);
+                Intent intent=new Intent(getApplicationContext(),cam2.class);
+                startActivity(intent);
             }
         });
-        b=(Button)findViewById(R.id.button4);
+        im1=(ImageView)findViewById(R.id.transport_button_homepage);
+        im1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+               // setContentView(R.layout.transport);
+                Intent i=new Intent(getApplicationContext(),transport.class);
+                startActivity(i);
+
+            }
+        });
+
+
+        im2=(ImageView)findViewById(R.id.doctor_appoint_homepage);
+        im2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                setContentView(R.layout.doctor);
+
+            }
+        });
 
 
     }

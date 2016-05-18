@@ -18,7 +18,7 @@
             android:background="@drawable/doctor22"
             android:layout_gravity="center"
             android:layout_marginLeft="135dp"
-            android:id="@+id/imageView9" />
+            android:id="@+id/doctor_appoint_homepage" />
     </LinearLayout>
     <LinearLayout
         android:orientation="horizontal"
@@ -50,7 +50,7 @@
             android:layout_width="50dp"
             android:layout_marginLeft="60dp"
             android:layout_height="50dp"
-            android:id="@+id/imageView10"
+            android:id="@+id/transport_button_homepage"
             android:background="@drawable/transport22"/>
 
         <ImageView
@@ -99,7 +99,7 @@
             android:layout_width="50dp"
             android:layout_height="50dp"
             android:layout_marginLeft="30dp"
-            android:id="@+id/imageView12"
+            android:id="@+id/medicine_button_homepage"
             android:background="@drawable/medicinebox"/>
 
         <ImageView

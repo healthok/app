@@ -118,7 +118,8 @@
             android:id="@+id/imageView14"
             android:layout_marginLeft="48dp"
             android:background="@drawable/microscop22"
-           />
+            android:clickable="true"
+            android:onClick="pathButton" />
 
 
     </LinearLayout>

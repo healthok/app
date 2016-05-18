@@ -11,6 +11,16 @@
     <string name="update">Update</string>
     <string name="search_hint">Search Here </string>
     <string name="search_title">Search</string>
+    <string-array name="spinner_string">
+
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+
+
+
+    </string-array>
 
 
 

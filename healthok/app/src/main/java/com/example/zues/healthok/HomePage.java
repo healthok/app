@@ -67,4 +67,11 @@ public class HomePage extends Activity {
 
         return true;
     }
+
+
+    protected void pathButton() {
+        Intent intent=new Intent(getApplicationContext(),Pathology.class);
+        startActivity(intent);
+
+    }
 }

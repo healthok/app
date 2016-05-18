@@ -115,7 +115,7 @@
         <ImageView
             android:layout_width="50dp"
             android:layout_height="50dp"
-            android:id="@+id/imageView14"
+            android:id="@+id/pathlab_button_homepage"
             android:layout_marginLeft="48dp"
             android:background="@drawable/microscop22"
             android:clickable="true"

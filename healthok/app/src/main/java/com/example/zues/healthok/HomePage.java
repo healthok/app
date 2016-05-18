@@ -26,6 +26,7 @@ public class HomePage extends Activity {
     ImageView im;
     ImageView im1;
     ImageView im2;
+    ImageView im3;
     public void onCreate(Bundle savedInstanceState)
     {
 
@@ -64,6 +65,16 @@ public class HomePage extends Activity {
 
             }
         });
+
+        im3=(ImageView)findViewById(R.id.pathlab_button_homepage);
+        im3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent=new Intent(getApplicationContext(),Pathology.class);
+                startActivity(intent);
+            }
+        });
+
 
 
     }

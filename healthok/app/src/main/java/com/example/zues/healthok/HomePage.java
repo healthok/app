@@ -41,14 +41,7 @@ public class HomePage extends Activity {
             }
         });
         b=(Button)findViewById(R.id.button4);
-        b.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent in=new Intent(getApplicationContext(),Medicine.class);
-                startActivity(in);
 
-            }
-        });
 
     }
 

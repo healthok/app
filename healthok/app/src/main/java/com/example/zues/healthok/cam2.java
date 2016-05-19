@@ -14,6 +14,9 @@ import android.provider.MediaStore;
 import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
+
+import com.example.zues.healthok.util.ServiceHandler;
+
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
@@ -124,7 +127,7 @@ builder.show();
 
                 Uri selectedImage = data.getData();
                 String[] filePath = { MediaStore.Images.Media.DATA };
-                Cursor c = getContentResolver().query(selectedImage,filePath, null, null, null);
+                Cursor c = getContentResolver().query(selectedImage, filePath, null, null, null);
                 c.moveToFirst();
                 int columnIndex = c.getColumnIndex(filePath[0]);
                 String picturePath = c.getString(columnIndex);
@@ -132,6 +135,8 @@ builder.show();
                 Bitmap thumbnail = (BitmapFactory.decodeFile(picturePath));
                 Log.w("path of image from gallery******************..", picturePath + "");
                 viewimage.setImageBitmap(thumbnail);
+                ServiceHandler sh = new ServiceHandler();
+                sh.uploadFIle(picturePath);
             }
         }
     }

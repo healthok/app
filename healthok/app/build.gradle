@@ -26,5 +26,18 @@ dependencies {
     compile 'com.android.support:support-v4:22.1.1'
     compile files('libs/gson-2.2.4.jar')
     compile "com.google.android.gms:play-services-gcm:8.4.0"
+    compile('org.apache.httpcomponents:httpmime:4.3.6') {
+        exclude module: "httpclient"
+    }
+    compile('org.apache.httpcomponents:httpcore:4.3.3') {
+        exclude module: "httpclient"
+    }
+}
+android {
+    packagingOptions {
+        exclude 'META-INF/DEPENDENCIES'
+        exclude 'META-INF/NOTICE'
+        exclude 'META-INF/LICENSE'
+    }
 }
 apply plugin: 'com.google.gms.google-services'

@@ -1,8 +1,14 @@
 package com.example.zues.healthok.util;
 
 
+import android.util.Log;
+
+import java.io.File;
 import java.io.IOException;
+import java.io.OutputStream;
 import java.io.UnsupportedEncodingException;
+import java.net.HttpURLConnection;
+import java.net.URL;
 import java.util.List;
 
 import org.apache.http.HttpEntity;
@@ -14,11 +20,14 @@ import org.apache.http.client.methods.HttpGet;
 import org.apache.http.client.methods.HttpPost;
 import org.apache.http.client.utils.URLEncodedUtils;
 import org.apache.http.entity.StringEntity;
+import org.apache.http.entity.mime.HttpMultipartMode;
+import org.apache.http.entity.mime.MultipartEntityBuilder;
 import org.apache.http.impl.client.DefaultHttpClient;
 import org.apache.http.util.EntityUtils;
 import org.json.JSONException;
 import org.json.JSONObject;
 import org.json.JSONStringer;
+
 
 public class ServiceHandler {
 
@@ -109,4 +118,32 @@ String fullURL = urlbase+url;
         return response;
 
     }
+
+    public void uploadFIle(String filePath) {
+        try
+        {
+            DefaultHttpClient client = new DefaultHttpClient();
+            File file = new File(filePath);
+            HttpPost post = new HttpPost("http://localhost:8010/healthokapp/rest/files/uploaddocpic");
+
+            MultipartEntityBuilder entityBuilder = MultipartEntityBuilder.create();
+            entityBuilder.setMode(HttpMultipartMode.BROWSER_COMPATIBLE);
+            entityBuilder.addBinaryBody("file", file);
+            entityBuilder.addTextBody("descrip", filePath);
+            // add more key/value pairs here as needed
+
+            HttpEntity entity = entityBuilder.build();
+            post.setEntity(entity);
+
+            HttpResponse response = client.execute(post);
+            HttpEntity httpEntity = response.getEntity();
+
+            Log.v("result", EntityUtils.toString(httpEntity));
+        }
+        catch(Exception e)
+        {
+            e.printStackTrace();
+        }
+    }
+
 }

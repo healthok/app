@@ -11,7 +11,7 @@ public class pathology_java extends Activity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.HomePage);
+      //  setContentView(R.layout.HomePage);
     }
 
 

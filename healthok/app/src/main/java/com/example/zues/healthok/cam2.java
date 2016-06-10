@@ -37,7 +37,7 @@ public class cam2 extends Activity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.medicine1);
+        setContentView(R.layout.medicine);
 
         camera_button=(ImageView) findViewById(R.id.cameraButton);
         viewimage=(ImageView) findViewById(R.id.uploaded_Image);

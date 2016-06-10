@@ -40,7 +40,7 @@ public class HomePage extends Activity {
             public void onClick(View view) {
                /* Intent in=new Intent(HomePage.this,Medicine.class);
                 startActivity(in);*/
-                //setContentView(R.layout.medicine1);
+                //setContentView(R.layout.medicine);
                 Intent intent=new Intent(getApplicationContext(),cam2.class);
                 startActivity(intent);
             }

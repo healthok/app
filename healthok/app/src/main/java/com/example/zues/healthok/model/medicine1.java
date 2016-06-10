@@ -20,7 +20,7 @@ public class medicine1 extends Activity {
         iv.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                setContentView(R.layout.medicine1);
+                setContentView(R.layout.medicine);
 
             }
         });

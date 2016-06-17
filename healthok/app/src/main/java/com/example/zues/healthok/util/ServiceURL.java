@@ -8,4 +8,5 @@ public class ServiceURL {
    // public static String Base = "http://192.168.0.9:8010/healthokapp/rest/"; // running locally use this and put ip of local machine
     public static String Login = "EmailRegister/Check";
     public static String GCMRegister = "gcm/register";
+    public static String Order = "order";
 }

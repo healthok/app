@@ -41,10 +41,11 @@ public class Login extends Activity
     Button log;
     SessionManager sessionManager;
     TextView textview;
-
+private static int ERROR = -1;
+    private static int NETWORK_ERROR = -2;
     // URL to get contacts JSON
 
-    String status="-5";
+    int status=ERROR;
     String jsonStr;
     // contacts JSONArray
     JSONObject result = null;
@@ -53,7 +54,7 @@ public class Login extends Activity
     public void onCreate(Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.content_main);
+        setContentView(R.layout.login);
 
         /*textview=(TextView)findViewById(R.id.textView20);
         textview.setOnClickListener(new View.OnClickListener() {
@@ -155,7 +156,7 @@ else {
             if (jsonStr != null) {
                 try {
                     result = new JSONObject(jsonStr);
-                    status = result.getString("UserId");
+                    status =  Integer.parseInt(result.getString("userId"));
                 } catch (JSONException e) {
                     e.printStackTrace();
                 }
@@ -172,9 +173,13 @@ else {
             // Dismiss the progress dialog
             if (pDialog.isShowing())
                 pDialog.dismiss();
-            if(status.equals("-1"))
+            if(status == ERROR)
             {
                 Toast.makeText(getApplicationContext(), "WRONG Username / Password", Toast.LENGTH_LONG).show();
+            }
+            else if ( status == NETWORK_ERROR)
+            {
+                Toast.makeText(getApplicationContext(), "Unable to reach server try again...", Toast.LENGTH_LONG).show();
             }
             else
             {

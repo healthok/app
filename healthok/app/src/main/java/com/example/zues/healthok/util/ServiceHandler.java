@@ -3,6 +3,8 @@ package com.example.zues.healthok.util;
 
 import android.util.Log;
 
+import com.google.gson.Gson;
+
 import java.io.File;
 import java.io.IOException;
 import java.io.OutputStream;
@@ -102,8 +104,9 @@ String fullURL = urlbase+url;
 
             }
             httpEntity = httpResponse.getEntity();
-            response = EntityUtils.toString(httpEntity);
-
+            if ( httpEntity != null) {
+                response = EntityUtils.toString(httpEntity);
+            }
         } catch (UnsupportedEncodingException e) {
             e.printStackTrace();
         } catch (ClientProtocolException e) {
@@ -119,7 +122,105 @@ String fullURL = urlbase+url;
 
     }
 
-    public void uploadFIle(String filePath) {
+
+    /**
+     * Making service call
+     *
+     * @url - url to make request
+     * @method - http request method
+     * @params - http request params
+     */
+    public String makeServiceCall(String url, int method,
+                                  Object data) {
+        String fullURL = urlbase+url;
+        try {
+            // http client
+            DefaultHttpClient httpClient = new DefaultHttpClient();
+            HttpEntity httpEntity = null;
+            HttpResponse httpResponse = null;
+
+            // Checking http request method type
+            if (method == POST) {
+                HttpPost httpPost = new HttpPost(fullURL);
+                // adding post params
+
+                if (data != null) {
+                    httpPost.setHeader("Content-Type", "application/json");
+
+                    Gson gson = new Gson();
+
+                    StringEntity param =  new StringEntity (gson.toJson(data));
+
+                    httpPost.setEntity(param);
+
+
+                    httpResponse = httpClient.execute(httpPost);
+                }
+
+            }
+        } catch (UnsupportedEncodingException e) {
+            e.printStackTrace();
+        } catch (ClientProtocolException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        return response;
+
+    }
+
+
+
+    /**
+     * Making service call
+     *
+     * @url - url to make request
+     * @method - http request method
+     * @params - http request params
+     */
+    public String makeServiceCall(String url,
+                                  Object data) {
+        String fullURL = urlbase+url;
+        try {
+            // http client
+            DefaultHttpClient httpClient = new DefaultHttpClient();
+            HttpEntity httpEntity = null;
+            HttpResponse httpResponse = null;
+
+                HttpPost httpPost = new HttpPost(fullURL);
+                // adding post params
+
+                if (data != null) {
+                    httpPost.setHeader("Content-Type", "application/json");
+
+                    Gson gson = new Gson();
+
+                    StringEntity param =  new StringEntity (gson.toJson(data));
+
+                    httpPost.setEntity(param);
+
+
+                    httpResponse = httpClient.execute(httpPost);
+                }
+
+        } catch (UnsupportedEncodingException e) {
+            e.printStackTrace();
+        } catch (ClientProtocolException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        return response;
+
+    }
+
+
+
+
+
+    public int uploadFile(String filePath) {
         try
         {
             DefaultHttpClient client = new DefaultHttpClient();
@@ -139,11 +240,15 @@ String fullURL = urlbase+url;
             HttpEntity httpEntity = response.getEntity();
 
             Log.v("result", EntityUtils.toString(httpEntity));
+
+            return 1;
         }
         catch(Exception e)
         {
             e.printStackTrace();
         }
+
+        return -1;
     }
 
 }

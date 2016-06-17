@@ -41,7 +41,7 @@ public class HomePage extends Activity {
                /* Intent in=new Intent(HomePage.this,Medicine.class);
                 startActivity(in);*/
                 //setContentView(R.layout.medicine);
-                Intent intent=new Intent(getApplicationContext(),cam2.class);
+                Intent intent=new Intent(getApplicationContext(),Medicine.class);
                 startActivity(intent);
             }
         });

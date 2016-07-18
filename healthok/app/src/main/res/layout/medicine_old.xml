@@ -15,7 +15,7 @@
         android:layout_width="60dp"
         android:layout_height="60dp"
         android:layout_marginLeft="10dp"
-        android:id="@+id/cameraButton"
+        android:id="@+id/cameraButton_old"
         android:layout_marginTop="10dp"
         android:onClick="selectImage"
         android:background="@drawable/cameraicon"
@@ -36,14 +36,14 @@
             android:text="ATTACH PRESCRIPTION"
             android:textColor="#A7B1FF"
             android:textSize="20dp"
-            android:id="@+id/textView4" />
+            android:id="@+id/textView4_old" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textAppearance="?android:attr/textAppearanceSmall"
                 android:text="Upload your prescription\n and get the medicine"
-                android:id="@+id/textView7"
+                android:id="@+id/textView7_old"
                 android:textColor="#A7B1FF"
                 android:textSize="10dp"
                 android:layout_marginLeft="20dp"/>
@@ -53,7 +53,7 @@
             android:layout_width="60dp"
             android:layout_height="60dp"
             android:layout_marginLeft="10dp"
-            android:id="@+id/uploaded_Image" />
+            android:id="@+id/uploaded_Image_old" />
     </LinearLayout>
 
     <LinearLayout
@@ -68,7 +68,7 @@
         android:layout_height="60dp"
         android:layout_marginTop="20dp"
         android:layout_marginLeft="10dp"
-        android:id="@+id/imageView7"
+        android:id="@+id/imageView7_old"
         android:background="@drawable/booking" />
 
         <LinearLayout
@@ -84,7 +84,7 @@
             android:textColor="#A7B1FF"
             android:text="MEDICINE DESCRIPTION"
             android:textSize="20dp"
-            android:id="@+id/textView5" />
+            android:id="@+id/textView5_old" />
 
             <EditText
                 android:layout_width="match_parent"
@@ -110,7 +110,7 @@
     <ImageView
         android:layout_width="60dp"
         android:layout_height="60dp"
-        android:id="@+id/imageView8"
+        android:id="@+id/imageView8_old"
         android:layout_marginTop="20dp"
         android:layout_marginLeft="10dp"
         android:background="@drawable/phoneicon" />
@@ -128,7 +128,7 @@
                 android:layout_marginTop="30dp"
                 android:layout_marginLeft="10dp"
                 android:textSize="20dp"
-                android:id="@+id/textView6" />
+                android:id="@+id/textView6_old" />
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -158,7 +158,7 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:text="Please have prescription ready when we call. We can't deliver without Prescription"
-    android:id="@+id/medicineDisclaimer"
+    android:id="@+id/medicineDisclaimer_old"
     android:foreground="#ffffff"
     android:textAppearance="?android:attr/textAppearanceSmall"
     android:textColor="#A7B1FF"

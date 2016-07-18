@@ -82,10 +82,10 @@ public class SessionManager {
         // Storing name in pref
         editor.putString(KEY_FIRSTNAME, user.getFirstName());
         editor.putString(KEY_LASTNAME, user.getLastName());
-        editor.putString(KEY_MOBILE, user.getMobile());
-        editor.putString(KEY_EMAIL, user.getEmail());
+        editor.putString(KEY_MOBILE, user.getPhone());
+        editor.putString(KEY_EMAIL, user.getEmailId());
         editor.putString(KEY_PASSWORD, user.getPassword());
-        editor.putInt(KEY_USERID, user.getUserid());
+        editor.putInt(KEY_USERID, user.getUserId());
 
 
         // commit changes

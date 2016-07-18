@@ -67,7 +67,7 @@ public class RegistrationIntentService extends IntentService {
         // call service to save token to server
         StatusCode result = StatusCode.UnknownError;
         SessionManager sessionManager = new SessionManager(getApplicationContext());
-        int userId = sessionManager.getUser().getUserid();
+        int userId = sessionManager.getUser().getUserId();
         List<NameValuePair> params = new ArrayList<>(2);
 
         params.add(new BasicNameValuePair("userid", Integer.toOctalString(userId)));

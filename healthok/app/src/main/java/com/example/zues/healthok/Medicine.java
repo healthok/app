@@ -13,6 +13,7 @@ import android.os.AsyncTask;
 import android.os.Bundle;
 import android.os.Environment;
 import android.provider.MediaStore;
+import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
 import android.widget.DatePicker;
@@ -44,7 +45,7 @@ import java.util.List;
 /**
  * Created by Raghuveer on 05/03/2016.
  */
-public class Medicine extends Activity {
+public class Medicine extends AppCompatActivity {
 
     private ProgressDialog pDialog;
     // URL to get contacts JSON
@@ -66,15 +67,15 @@ String picturePath = null;
         super.onCreate(savedInstanceState);
         setContentView(R.layout.medicine);
 
-        camera_button=(ImageView) findViewById(R.id.cameraButton);
-        viewimage=(ImageView) findViewById(R.id.uploaded_Image);
-        camera_button.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View V) {
-                selectImage();
-            }
+//        camera_button=(ImageView) findViewById(R.id.cameraButton);
+//        viewimage=(ImageView) findViewById(R.id.uploaded_Image);
+//        camera_button.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View V) {
+//                selectImage();
+//            }
 
-        });
+//        });
 
     }
     public void selectImage(){
@@ -163,13 +164,16 @@ builder.show();
         orderBase = new OrderBase();
         orderBase.setOrderType(OrderType.MEDICINE);
         orderBase.setOrderDescription(((EditText) findViewById(R.id.medicineDescription)).toString());
-        DatePicker datePicker = ((DatePicker)findViewById(R.id.medicineNeededBy));
-orderBase.setOrderFulfillDate( new Date(datePicker.getYear(), datePicker.getMonth(), datePicker.getDayOfMonth()));
+//        DatePicker datePicker = ((DatePicker)findViewById(R.id.medicineNeededBy));
+//orderBase.setOrderFulfillDate( new Date(datePicker.getYear(), datePicker.getMonth(), datePicker.getDayOfMonth()));
     }
 
 
 
-
+public void testevent ( View view)
+{
+    // do nothing
+}
     private class SubmitOrder extends AsyncTask<Void, Void, Void> {
 
         @Override

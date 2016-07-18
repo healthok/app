@@ -7,6 +7,7 @@ import android.content.SharedPreferences;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
+import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
@@ -15,6 +16,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.zues.healthok.model.User;
+import com.example.zues.healthok.model.UserFull;
 import com.example.zues.healthok.service.MyGcmListenerService;
 import com.example.zues.healthok.service.RegistrationIntentService;
 import com.example.zues.healthok.util.ServiceHandler;
@@ -30,7 +32,7 @@ import org.json.JSONObject;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Login extends Activity
+public class Login extends AppCompatActivity
 {
     private ProgressDialog pDialog;
 
@@ -185,6 +187,14 @@ else {
             {
 
 user = new User(jsonStr);
+                UserFull userfull = UserFull.fromJSON(jsonStr);
+                if ( userfull != null) {
+                    Log.d("LOGIN", "Userfull Name is " + userfull.getFirstName());
+                }
+                else
+                {
+                    Log.d("LOGIN", "Unable to parse json string " + jsonStr);
+                }
                 sessionManager.createLoginSession(user);
                 // start GCM Listener
                 startGCMListener();

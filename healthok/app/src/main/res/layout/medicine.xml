@@ -1,9 +1,32 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/bck8">
 
+
+
+       <Spinner
+           android:layout_marginTop="20dp"
+           android:layout_width="match_parent"
+           android:layout_height="50dp"
+           android:spinnerMode="dialog"
+     android:prompt="@string/prompt_family_dd"
+           android:entries="@array/spinner_string"
+           style="@android:style/Widget.Spinner" />
+
+    <Spinner
+        android:layout_marginTop="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:spinnerMode="dropdown"
+        android:prompt="@string/prompt_family_dd"
+        android:entries="@array/spinner_string"
+        style="@android:style/Widget.Spinner" />
+
+    <!--
     <LinearLayout
         android:orientation="horizontal"
         android:layout_width="match_parent"
@@ -55,6 +78,7 @@
             android:layout_marginLeft="10dp"
             android:id="@+id/uploaded_Image" />
     </LinearLayout>
+
 
     <LinearLayout
         android:orientation="horizontal"
@@ -160,6 +184,7 @@
 
     </DatePicker>
 
+-->
     <Button
         android:layout_width="310dp"
         android:layout_height="46dp"

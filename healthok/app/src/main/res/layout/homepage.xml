@@ -1,181 +1,97 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#000000">
-
-    <LinearLayout
-        android:orientation="horizontal"
-        android:layout_width="match_parent"
-        android:layout_height="52dp"
-        android:layout_marginTop="130dp"
-
-        android:layout_gravity="center_horizontal">
-
-        <ImageView
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:background="@drawable/doctor22"
-            android:layout_gravity="center"
-            android:layout_marginLeft="135dp"
-            android:id="@+id/doctor_appoint_homepage" />
-    </LinearLayout>
-    <LinearLayout
-        android:orientation="horizontal"
-        android:layout_width="match_parent"
-        android:layout_height="21dp"
+ >
 
 
-        android:layout_gravity="center_horizontal">
-
-        <TextView
-            android:layout_width="wrap_content"
+<!--
+        <Button
+            android:layout_marginTop="20dp"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textAppearance="?android:attr/textAppearanceLarge"
-            android:text="DOCTOR'S APPT."
-            android:textSize="15dp"
-            android:textColor="#FFFFFF"
-            android:layout_marginLeft="105dp"
-            android:id="@+id/textView24" />
-    </LinearLayout>
-
-    <LinearLayout
-        android:orientation="horizontal"
-        android:layout_width="match_parent"
-        android:layout_height="60dp"
-
-        android:layout_gravity="center_horizontal">
-
-        <ImageView
-            android:layout_width="50dp"
-            android:layout_marginLeft="60dp"
-            android:layout_height="50dp"
-            android:id="@+id/transport_button_homepage"
-            android:background="@drawable/transport22"/>
-
-        <ImageView
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:layout_marginLeft="100dp"
-            android:id="@+id/imageView11"
-            android:background="@drawable/nurse23"/>
-    </LinearLayout>
-    <LinearLayout
-        android:orientation="horizontal"
-        android:layout_width="match_parent"
-        android:layout_height="21dp"
+            android:id="@+id/btnOrderMedicine"
+            android:text="test button"
+            android:drawableLeft="@drawable/doc"
+            android:onClick="onClick"
 
 
-        android:layout_gravity="center_horizontal">
+            />
+-->
 
-        <TextView
-            android:layout_width="wrap_content"
+        <com.beardedhen.androidbootstrap.BootstrapButton
+            android:layout_marginTop="20dp"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textAppearance="?android:attr/textAppearanceLarge"
-            android:text="TRANSPORT"
-            android:textColor="#FFFFFF"
-            android:textSize="15dp"
-            android:layout_marginLeft="35dp"
-            android:id="@+id/textView25" />
+            android:id="@+id/btnDoctorAppointment"
+            android:drawableLeft="@drawable/doc"
+            app:buttonMode="regular"
+            app:showOutline="false"
+            app:roundedCorners="true"
+            app:bootstrapSize="lg"
+            app:bootstrapText="Doctor Appointment"
+            app:bootstrapBrand="secondary"
 
-        <TextView
-            android:layout_width="wrap_content"
+            android:onClick="onClick" />
+
+        <com.beardedhen.androidbootstrap.BootstrapButton
+            android:layout_marginTop="20dp"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textAppearance="?android:attr/textAppearanceLarge"
-            android:text="NURSING"
-            android:textColor="#FFFFFF"
-            android:layout_marginLeft="82dp"
-            android:textSize="15dp"
-            android:id="@+id/textView26" />
-    </LinearLayout>
-    <LinearLayout
-        android:orientation="horizontal"
-        android:layout_width="match_parent"
-        android:layout_height="60dp"
+            android:id="@+id/btnOrderMedicine"
+            android:drawableLeft="@drawable/medicine"
+            app:buttonMode="regular"
+            app:showOutline="false"
+            app:roundedCorners="true"
+            app:bootstrapSize="lg"
+            app:bootstrapText="Medicine Order"
+            app:bootstrapBrand="secondary"
+            android:onClick="onClick" />
 
-        android:layout_gravity="center_horizontal">
-
-        <ImageView
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:layout_marginLeft="30dp"
-            android:id="@+id/medicine_button_homepage"
-            android:background="@drawable/medicinebox"/>
-
-        <ImageView
-            android:layout_width="60dp"
-            android:layout_height="60dp"
-            android:id="@+id/imageView13"
-            android:layout_marginLeft="50dp"
-            android:gravity="center_horizontal"
-
-            android:scaleType="center"
-            android:background="@drawable/contact32"/>
-
-        <ImageView
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:id="@+id/pathlab_button_homepage"
-            android:layout_marginLeft="48dp"
-            android:background="@drawable/microscop22"
-            android:clickable="true"
-            android:onClick="pathButton" />
-
-
-    </LinearLayout>
-    <LinearLayout
-        android:orientation="horizontal"
-        android:layout_width="match_parent"
-        android:layout_height="21dp"
-
-
-        android:layout_gravity="center_horizontal">
-
-        <TextView
-            android:layout_width="wrap_content"
+        <com.beardedhen.androidbootstrap.BootstrapButton
+            android:layout_marginTop="20dp"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textAppearance="?android:attr/textAppearanceLarge"
-            android:text="MEDICINE"
-            android:textColor="#FFFFFF"
-            android:textSize="15dp"
-            android:layout_marginLeft="15dp"
-            android:id="@+id/textView27" />
+            android:id="@+id/btnOrderLab"
+            android:drawableLeft="@drawable/lab"
+            app:buttonMode="regular"
+            app:showOutline="false"
+            app:roundedCorners="true"
+            app:bootstrapSize="lg"
+            app:bootstrapText="Pathology Order"
+            app:bootstrapBrand="secondary"
+            />
 
-        <TextView
-            android:layout_width="wrap_content"
+
+        <com.beardedhen.androidbootstrap.BootstrapButton
+            android:layout_marginTop="20dp"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textAppearance="?android:attr/textAppearanceLarge"
-            android:text="PATHOLOGY"
-            android:layout_marginLeft="140dp"
-            android:textSize="15dp"
-            android:textColor="#FFFFFF"
-            android:id="@+id/textView28" />
-    </LinearLayout>
+            android:id="@+id/btnOrderAmbulance"
+            android:drawableLeft="@drawable/ambulance"
+            app:buttonMode="regular"
+            app:showOutline="false"
+            app:roundedCorners="true"
+            app:bootstrapSize="lg"
+            app:bootstrapText="Ambulance"
+            app:bootstrapBrand="secondary"
+            />
 
-    <LinearLayout
-        android:orientation="horizontal"
-        android:layout_width="match_parent"
-        android:layout_height="40dp"
-
-        android:layout_gravity="center_horizontal">
-
-        <TextView
-            android:layout_width="wrap_content"
+        <com.beardedhen.androidbootstrap.BootstrapButton
+            android:layout_marginTop="20dp"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textAppearance="?android:attr/textAppearanceMedium"
-            android:text="FEELING LAZY?"
-            android:textColor="#FFFFFF"
-            android:layout_marginLeft="90dp"
-            android:id="@+id/textView9" />
-    </LinearLayout>
+            android:id="@+id/btnOrderNurse"
+            android:drawableLeft="@drawable/nurse"
+            app:buttonMode="regular"
+            app:showOutline="false"
+            app:roundedCorners="true"
+            app:bootstrapSize="lg"
+            app:bootstrapText="Home Nursing"
+            app:bootstrapBrand="secondary"
+            />
 
-    <Button
-        android:layout_width="264dp"
-        android:layout_height="50dp"
-        android:text="CALL ME BACK"
-        android:id="@+id/button4"
-        android:layout_marginRight="5dp"
-        android:background="#F2F2F2"
-        android:ems="20"
-        android:layout_gravity="center_horizontal" />
+
 </LinearLayout>

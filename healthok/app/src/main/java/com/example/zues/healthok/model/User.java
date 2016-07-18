@@ -9,67 +9,64 @@ import org.json.JSONObject;
  */
 public class User {
 
-    public int userid = -1;
-    public String email=null;
-    public String password=null;
-    public String firstName=null;
-    public String lastName=null;
-    public String mobile=null;
-    public String loginid = null; // this could be the emailId or mobile
+    private String FirstName;
+    private String LastName;
 
-
-    public int getUserid()
-    {
-        return userid;
+    private int UserId;
+    private String emailId;
+    private String phone;
+    private String password;
+    public String getFirstName() {
+        return FirstName;
+    }
+    public void setFirstName(String firstName) {
+        FirstName = firstName;
     }
 
-    public void setUserId(int userId)
-    {
-        userid = userId;
-    }
+    public String getLastName() {
+        return LastName;
 
-    public String getEmail() {
-        return email;
     }
-    public void setEmail(String email) {
-        this.email = email;
+    public void setLastName(String lastName) {
+        LastName = lastName;
+    }
+    public int getUserId() {
+        return UserId;
+    }
+    public void setUserId(int userId) {
+        UserId = userId;
+    }
+    public String getEmailId() {
+        return emailId;
+    }
+    public void setEmailId(String emailId) {
+        this.emailId = emailId;
+    }
+    public String getPhone() {
+        return phone;
+    }
+    public void setPhone(String phone) {
+        this.phone = phone;
     }
     public String getPassword() {
-        return this.password;
+        return password;
     }
     public void setPassword(String password) {
         this.password = password;
     }
-    public String getFirstName() {
-        return firstName;
-    }
-    public void setFirstName(String firstName) {
-        this.firstName = firstName;
-    }
-    public String getLastName() {
-        return this.lastName;
-    }
-    public void setLastName(String lastName) {
-        this.lastName = lastName;
-    }
-    public String getMobile() {
-        return mobile;
-    }
-    public void setMobile(String mobile) {
-        this.mobile = mobile;
-    }
 
-    public User(int userId, String firstName, String lastName, String emailId, String mobile, String password)
-    {
 
-        setUserId(userId);
-        setEmail(emailId);
+    public User(int userId, String firstName, String lastName, String emailId, String phone, String password)
+        {
+
+                setUserId(userId);
+                setEmailId(emailId);
         setFirstName(firstName);
-        setLastName(lastName);
-        setPassword(password);
-        setMobile(mobile);
+            setLastName(lastName);
+              setPassword(password);
+                setPhone(phone);
+                            }
 
-    }
 
     public User( String jsonString)
     {
@@ -77,14 +74,13 @@ try
 {
 
 
-
-        JSONObject jsonObject = new JSONObject(jsonString);
+    JSONObject jsonObject = new JSONObject(jsonString);
      setUserId(jsonObject.getInt("UserId"));
-    setEmail(jsonObject.getString("EmailId"));
+    setEmailId(jsonObject.getString("EmailId"));
         setFirstName(jsonObject.getString("FirstName"));
         setLastName(jsonObject.getString("LastName"));
         setPassword(jsonObject.getString("Password"));
-        setMobile(jsonObject.getString("Mobile"));
+        setPhone(jsonObject.getString("Mobile"));
     }
 catch (Exception e)
 {

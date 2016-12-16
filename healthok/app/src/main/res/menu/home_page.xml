@@ -1,9 +1,10 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    tools:context="com.example.zues.healthok.HomePage">
+    >
+//    tools:context="com.example.zues.healthok.HomePage"
 
-    <item android:id="@+id/action_example"
+    <item android:id="@+id/action_example1"
           android:title="@string/action_example"
           app:showAsAction="withText|ifRoom" />
 

@@ -1,22 +1,50 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:isScrollContainer="true"
     android:background="@drawable/bck8">
 
+    <include
+        layout="@layout/toolbar"
+        android:id="@+id/toolbar">
 
+    </include>
 
+    <LinearLayout
+        android:layout_marginTop="50dp"
+        android:orientation="horizontal"
+        android:layout_gravity="center_vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <ImageView
+            android:src="@drawable/user_icon"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="10dp"
+            />
        <Spinner
-           android:layout_marginTop="20dp"
+           android:layout_marginLeft="20dp"
            android:layout_width="match_parent"
            android:layout_height="50dp"
            android:spinnerMode="dialog"
      android:prompt="@string/prompt_family_dd"
            android:entries="@array/spinner_string"
+           android:layout_gravity="center_vertical"
            style="@android:style/Widget.Spinner" />
-
+    </LinearLayout>
+    <!--
     <Spinner
         android:layout_marginTop="20dp"
         android:layout_width="match_parent"
@@ -26,41 +54,46 @@
         android:entries="@array/spinner_string"
         style="@android:style/Widget.Spinner" />
 
-    <!--
+-->
+
     <LinearLayout
         android:orientation="horizontal"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="50dp"
-        android:layout_gravity="center_horizontal">
+        android:layout_gravity="center_vertical"
+        >
 
     <ImageView
         android:layout_width="60dp"
         android:layout_height="60dp"
         android:layout_marginLeft="10dp"
         android:id="@+id/cameraButton"
-        android:layout_marginTop="10dp"
         android:onClick="selectImage"
         android:background="@drawable/cameraicon"
+        android:layout_gravity="center_vertical"
 
          />
 
+<!--
         <LinearLayout
             android:orientation="vertical"
             android:layout_width="wrap_content"
             android:layout_marginLeft="10dp"
             android:layout_marginTop="10dp"
             android:layout_height="match_parent">
-
+-->
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textAppearance="?android:attr/textAppearanceLarge"
-            android:text="ATTACH PRESCRIPTION"
+            android:text="Prescription"
             android:textColor="#A7B1FF"
-            android:textSize="20dp"
-            android:id="@+id/textView4" />
+            android:textSize="30dp"
+            android:layout_marginLeft="20dp"
+            android:layout_gravity="center_vertical"
+ />
 
+            <!--
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -71,12 +104,15 @@
                 android:textSize="10dp"
                 android:layout_marginLeft="20dp"/>
         </LinearLayout>
-
+-->
         <ImageView
             android:layout_width="60dp"
             android:layout_height="60dp"
-            android:layout_marginLeft="10dp"
-            android:id="@+id/uploaded_Image" />
+            android:layout_marginLeft="20dp"
+            android:id="@+id/uploaded_Image"
+            android:scaleType="fitCenter"
+            android:adjustViewBounds="true"
+            />
     </LinearLayout>
 
 
@@ -84,18 +120,18 @@
         android:orientation="horizontal"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:layout_gravity="center_horizontal"
-        android:nestedScrollingEnabled="false">
+        android:layout_marginTop="50dp"
+        android:layout_gravity="center_vertical">
 
     <ImageView
         android:layout_width="60dp"
         android:layout_height="60dp"
-        android:layout_marginTop="20dp"
         android:layout_marginLeft="10dp"
-        android:id="@+id/imageView7"
-        android:background="@drawable/booking" />
+        android:layout_gravity="center_vertical"
+        android:background="@drawable/instructions_transparent"
+        />
 
+<!--
         <LinearLayout
             android:orientation="vertical"
             android:layout_width="wrap_content"
@@ -110,29 +146,26 @@
             android:text="MEDICINE DESCRIPTION"
             android:textSize="20dp"
             android:id="@+id/textView5" />
-
+-->
             <EditText
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:textAppearance="?android:attr/textAppearanceSmall"
-                android:text="Write your medicine description here.\n We will save the description for\n faster delivery next time."
-                android:id="@+id/medicineDescription"
-                android:textSize="10dp"
-                android:textColor="#A7B1FF"
+                android:layout_height="50dp"
+                android:id="@+id/Description"
+                android:textSize="10sp"
                 android:layout_marginLeft="10dp"
-                android:layout_gravity="center_horizontal"
-                android:hint="Medicine you need\n If you enter nothing we will call and get details."
-                android:background="#ffffff"
-                android:editable="true"
-                android:elegantTextHeight="true"
-                android:foreground="#000000" />
+                android:hint="Enter Special Instructions / Medicine details"
+                android:layout_gravity="center_vertical"
+android:paddingLeft="10dp"
+                android:background="#ffffff" />
 
+        <!--
         </LinearLayout>
-
+-->
 
 
     </LinearLayout>
 
+    <!--
     <LinearLayout
         android:orientation="horizontal"
         android:layout_width="match_parent"
@@ -176,18 +209,40 @@
 
     </LinearLayout>
 
+-->
 
-    <DatePicker
+    <LinearLayout
+        android:orientation="horizontal"
         android:layout_width="match_parent"
-        android:layout_height="100dp"
-        android:id="@+id/medicineNeededBy">
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:layout_gravity="center_vertical">
+
+        <ImageView
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_marginLeft="10dp"
+            android:layout_gravity="center_vertical"
+            android:background="@drawable/calendar_transparent"
+            />
+
+        <DatePicker
+            android:layout_marginLeft="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+            android:layout_gravity="center_vertical"
+        android:id="@+id/NeededBy"
+            android:calendarViewShown="true"
+            android:datePickerMode="calendar"
+>
 
     </DatePicker>
 
--->
+</LinearLayout>
+
     <Button
-        android:layout_width="310dp"
-        android:layout_height="46dp"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
         android:text="SUBMIT"
         android:textSize="28dp"
         android:textColor="#FFFFFF"
@@ -201,14 +256,15 @@
 <TextView
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:text="Please have prescription ready when we call. We can't deliver without Prescription"
-    android:id="@+id/medicineDisclaimer"
+    android:text="Our Pharmacist will call and verify all order details"
     android:foreground="#ffffff"
     android:textAppearance="?android:attr/textAppearanceSmall"
     android:textColor="#A7B1FF"
     android:textSize="10dp"
-    android:layout_marginTop="40dp"
+    android:layout_marginTop="20dp"
     android:gravity="center"
     />
 
 </LinearLayout>
+
+</ScrollView>

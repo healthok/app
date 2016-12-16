@@ -43,7 +43,7 @@
         android:icon="@drawable/icon"
         android:label="@string/app_name"
         android:name=".HealthOK"
-        android:theme="@style/Theme.AppCompat.Light"
+        android:theme="@style/Theme.AppCompat.Light.NoActionBar"
 
     >
 
@@ -64,14 +64,16 @@
 
         <activity
             android:name=".HomePage"
-            android:label="@string/app_name"
+            android:label="Home"
             >
         </activity>
 
         <activity
 
             android:name=".Medicine"
-            android:label="@string/app_name" >
+            android:label="Medicine"
+            android:parentActivityName=".HomePage"
+            >
 
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"

@@ -4,6 +4,9 @@ import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.Toolbar;
+import android.view.Menu;
+import android.view.MenuInflater;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
@@ -23,10 +26,12 @@ public class HomePage extends AppCompatActivity {
     public void onCreate(Bundle savedInstanceState)
     {
 
-//        ActionBar actionBar = getActionBar();
-//        actionBar.setBackgroundDrawable(new ColorDrawable(Color.LTGRAY));
         super.onCreate(savedInstanceState);
         setContentView(R.layout.homepage);
+        Toolbar myToolbar = (Toolbar) findViewById(R.id.toolbar);
+//        myToolbar.setTitle("Home");
+        setSupportActionBar(myToolbar);
+        ;
 
 
 /*
@@ -117,28 +122,17 @@ int  btnId = view.getId();
         }
     }
 
-    /*
+
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         MenuInflater inflater = getMenuInflater();
         inflater.inflate(R.menu.menu_home_page, menu);
 
 
-        //associate searchable confugration with searchview
-
-        SearchManager searchManager= (SearchManager) getSystemService(Context.SEARCH_SERVICE);
-        SearchView searchView = (SearchView) menu.findItem(R.id.search).getActionView();
-        searchView.setSearchableInfo(searchManager.getSearchableInfo(getComponentName()));
-
 
         return true;
     }
 
 
-    protected void pathButton() {
-        Intent intent=new Intent(getApplicationContext(),Pathology.class);
-        startActivity(intent);
 
-    }
-*/
 }
